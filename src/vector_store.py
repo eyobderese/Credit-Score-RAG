@@ -87,16 +87,16 @@ class VectorStore:
             chunk_idx = doc.metadata.get('chunk_index', i)
             ids.append(f"{source}_{chunk_idx}")
         
-        # Add to collection
-        logger.info("Adding to ChromaDB...")
-        self.collection.add(
+        # Add/Update in collection
+        logger.info("Upserting to ChromaDB...")
+        self.collection.upsert(
             embeddings=embeddings,
             documents=texts,
             metadatas=metadatas,
             ids=ids
         )
         
-        logger.info(f"Successfully added {len(documents)} documents")
+        logger.info(f"Successfully processed {len(documents)} documents")
     
     def similarity_search(
         self,

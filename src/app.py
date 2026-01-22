@@ -151,20 +151,26 @@ def main():
         
         if uploaded_files:
             if st.button("🚀 Ingest Uploaded Files", use_container_width=True):
-                total_new_chunks = 0
                 for uploaded_file in uploaded_files:
-                    with st.spinner(f"Ingesting {uploaded_file.name}..."):
-                        result = rag.ingest_file(uploaded_file)
-                        if result["status"] == "success":
-                            st.toast(f"✅ {uploaded_file.name} indexed!")
-                            total_new_chunks += result["chunks"]
-                        else:
-                            st.error(f"❌ Error ingesting {uploaded_file.name}: {result['message']}")
+                    with st.status(f"Processing {uploaded_file.name}...", expanded=True) as status:
+                        st.write("🔍 Extracting text and metadata...")
+                        try:
+                            result = rag.ingest_file(uploaded_file)
+                            if result["status"] == "success":
+                                st.write(f"✅ Chunking complete: {result['chunks']} chunks created.")
+                                st.write("💾 Upserting to vector database...")
+                                status.update(label=f"🟢 {uploaded_file.name} successfully ingested!", state="complete", expanded=False)
+                                st.toast(f"Success: {uploaded_file.name}")
+                            else:
+                                status.update(label=f"❌ Failed: {uploaded_file.name}", state="error")
+                                st.error(f"Error: {result['message']}")
+                        except Exception as e:
+                            status.update(label=f"❌ Error: {uploaded_file.name}", state="error")
+                            st.error(f"Unexpected error: {str(e)}")
                 
-                if total_new_chunks > 0:
-                    st.success(f"Successfully added {total_new_chunks} new chunks to the knowledge base!")
-                    # Use a slight delay or just rerun to update metrics
-                    st.rerun()
+                st.success("All files processed!")
+                # Force refresh to update document count and policy list
+                st.rerun()
         
         st.divider()
         
