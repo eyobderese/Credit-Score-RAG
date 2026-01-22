@@ -79,10 +79,15 @@ class RAGPipeline:
             # Add to vector store
             self.vector_store.add_documents(chunks)
             
+            # Verify ingestion
+            count = self.vector_store.collection.count()
+            logger.info(f"Ingestion complete. Total documents in collection: {count}")
+            
             return {
                 "status": "success",
-                "message": f"Successfully ingested {len(chunks)} chunks from '{uploaded_file.name}'",
-                "chunks": len(chunks)
+                "message": f"Successfully ingested {len(chunks)} chunks from '{uploaded_file.name}'. Total chunks in DB: {count}",
+                "chunks": len(chunks),
+                "total_in_db": count
             }
         except Exception as e:
             logger.error(f"Ingestion failed for {uploaded_file.name}: {e}")

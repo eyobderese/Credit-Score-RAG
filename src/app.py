@@ -145,28 +145,47 @@ def main():
         uploaded_files = st.file_uploader(
             "Upload policy files (PDF/MD)", 
             type=["pdf", "md"], 
-            accept_multiple_files=True
+            accept_multiple_files=True,
+            key="file_uploader"
         )
         
         if uploaded_files:
             if st.button("🚀 Ingest Uploaded Files", use_container_width=True):
+                total_new_chunks = 0
                 for uploaded_file in uploaded_files:
                     with st.spinner(f"Ingesting {uploaded_file.name}..."):
                         result = rag.ingest_file(uploaded_file)
                         if result["status"] == "success":
-                            st.success(result["message"])
-                            # Force refresh stats
-                            st.rerun()
+                            st.toast(f"✅ {uploaded_file.name} indexed!")
+                            total_new_chunks += result["chunks"]
                         else:
-                            st.error(f"Error ingesting {uploaded_file.name}: {result['message']}")
+                            st.error(f"❌ Error ingesting {uploaded_file.name}: {result['message']}")
+                
+                if total_new_chunks > 0:
+                    st.success(f"Successfully added {total_new_chunks} new chunks to the knowledge base!")
+                    # Use a slight delay or just rerun to update metrics
+                    st.rerun()
         
         st.divider()
         
         # Indexed Sources
-        if stats.get('indexed_sources'):
-            st.subheader("📚 Indexed Policies")
-            for source in stats['indexed_sources']:
+        indexed_sources = stats.get('indexed_sources', [])
+        if indexed_sources:
+            st.subheader(f"📚 Indexed Policies ({len(indexed_sources)})")
+            for source in indexed_sources:
                 st.caption(f"• {source}")
+        
+        st.divider()
+        
+        # Danger Zone
+        with st.expander("⚠️ Danger Zone"):
+            if st.button("🗑️ Reset Database", use_container_width=True, type="secondary"):
+                try:
+                    rag.vector_store.reset_collection()
+                    st.success("Database reset successfully!")
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Reset failed: {e}")
         
         st.divider()
         

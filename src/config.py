@@ -42,7 +42,7 @@ class Config:
         self.chunk_size = int(os.getenv("CHUNK_SIZE", "1000"))
         self.chunk_overlap = int(os.getenv("CHUNK_OVERLAP", "200"))
         self.top_k_retrieval = int(os.getenv("TOP_K_RETRIEVAL", "5"))
-        self.similarity_threshold = float(os.getenv("SIMILARITY_THRESHOLD", "0.7"))
+        self.similarity_threshold = float(os.getenv("SIMILARITY_THRESHOLD", "0.5"))
         
         # ChromaDB Configuration
         project_root = Path(__file__).parent.parent

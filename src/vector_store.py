@@ -80,8 +80,12 @@ class VectorStore:
             convert_to_numpy=True
         ).tolist()
         
-        # Generate IDs
-        ids = [f"doc_{i}" for i in range(len(documents))]
+        # Generate unique IDs using source and index or UUID
+        ids = []
+        for i, doc in enumerate(documents):
+            source = doc.metadata.get('source', 'unknown').replace(' ', '_')
+            chunk_idx = doc.metadata.get('chunk_index', i)
+            ids.append(f"{source}_{chunk_idx}")
         
         # Add to collection
         logger.info("Adding to ChromaDB...")
@@ -138,6 +142,7 @@ class VectorStore:
                 
                 # Apply threshold if specified
                 if threshold is not None and similarity < threshold:
+                    logger.debug(f"Filtering result with similarity {similarity:.3f} (threshold: {threshold})")
                     continue
                 
                 result = {
