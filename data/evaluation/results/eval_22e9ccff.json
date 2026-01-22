@@ -1,0 +1,112 @@
+{
+  "id": "22e9ccff",
+  "test_set_name": "default",
+  "run_at": "2026-01-22T18:43:05.877202",
+  "metrics": {
+    "answer_accuracy": 0.0,
+    "source_accuracy": 0.0,
+    "hallucination_rate": 0.0,
+    "citation_coverage": 0.0,
+    "precision_at_k": 0.0,
+    "recall_at_k": 0.0,
+    "mrr": 0.0,
+    "avg_response_time_ms": 129.7088623046875,
+    "avg_confidence": 0.0,
+    "avg_bert_score": null
+  },
+  "results": [
+    {
+      "test_case_id": "tc_001",
+      "question": "What is the minimum credit score for FHA loans?",
+      "expected_answer": "580 for maximum financing, 500-579 requires 10% down payment",
+      "actual_answer": "I don't have information about that in the policy documents.",
+      "sources_retrieved": [],
+      "expected_sources": [
+        "credit_scoring_manual.md"
+      ],
+      "answer_correct": false,
+      "source_match": false,
+      "has_hallucination": false,
+      "confidence": 0,
+      "response_time_ms": 80.51419258117676,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "tc_002",
+      "question": "What is the maximum DTI ratio for conventional mortgages?",
+      "expected_answer": "43% for qualified mortgages, up to 50% with compensating factors",
+      "actual_answer": "I don't have information about that in the policy documents.",
+      "sources_retrieved": [],
+      "expected_sources": [
+        "risk_assessment_guidelines.md"
+      ],
+      "answer_correct": false,
+      "source_match": false,
+      "has_hallucination": false,
+      "confidence": 0,
+      "response_time_ms": 48.21014404296875,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "tc_003",
+      "question": "What documentation is required for self-employed borrowers?",
+      "expected_answer": "Two years of tax returns, profit and loss statements, business bank statements",
+      "actual_answer": "I don't have information about that in the policy documents.",
+      "sources_retrieved": [],
+      "expected_sources": [
+        "underwriting_policies.md"
+      ],
+      "answer_correct": false,
+      "source_match": false,
+      "has_hallucination": false,
+      "confidence": 0,
+      "response_time_ms": 9.234905242919922,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "tc_004",
+      "question": "What is the waiting period after bankruptcy?",
+      "expected_answer": "Chapter 7: 4 years for conventional, 2 years for FHA. Chapter 13: 2 years from discharge",
+      "actual_answer": "I don't have information about that in the policy documents.",
+      "sources_retrieved": [],
+      "expected_sources": [
+        "underwriting_policies.md"
+      ],
+      "answer_correct": false,
+      "source_match": false,
+      "has_hallucination": false,
+      "confidence": 0,
+      "response_time_ms": 503.50117683410645,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "tc_005",
+      "question": "What credit score is needed for the best interest rates?",
+      "expected_answer": "760+ for the best rates, excellent credit tier",
+      "actual_answer": "I don't have information about that in the policy documents.",
+      "sources_retrieved": [],
+      "expected_sources": [
+        "credit_scoring_manual.md"
+      ],
+      "answer_correct": false,
+      "source_match": false,
+      "has_hallucination": false,
+      "confidence": 0,
+      "response_time_ms": 7.083892822265625,
+      "bert_score": null,
+      "rouge_score": null
+    }
+  ],
+  "failed_cases": [
+    "tc_001",
+    "tc_002",
+    "tc_003",
+    "tc_004",
+    "tc_005"
+  ],
+  "error_categories": {}
+}

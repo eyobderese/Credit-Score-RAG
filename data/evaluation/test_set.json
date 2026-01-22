@@ -1,0 +1,226 @@
+[
+    {
+        "id": "q001",
+        "question": "What is the minimum credit score required for FHA loans?",
+        "expected_answer": "580 with 3.5% down payment, or 500 with 10% down payment",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "580",
+            "500",
+            "FHA",
+            "down payment"
+        ],
+        "category": "credit_score",
+        "difficulty": "easy"
+    },
+    {
+        "id": "q002",
+        "question": "What is the minimum credit score for conventional mortgage loans?",
+        "expected_answer": "620",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "620",
+            "conventional"
+        ],
+        "category": "credit_score",
+        "difficulty": "easy"
+    },
+    {
+        "id": "q003",
+        "question": "What is the minimum credit score for jumbo loans?",
+        "expected_answer": "700",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "700",
+            "jumbo"
+        ],
+        "category": "credit_score",
+        "difficulty": "easy"
+    },
+    {
+        "id": "q004",
+        "question": "What is the maximum DTI ratio for conventional loans?",
+        "expected_answer": "43% (up to 50% with compensating factors)",
+        "expected_sources": [
+            "underwriting_policies.md"
+        ],
+        "keywords": [
+            "43",
+            "50",
+            "DTI"
+        ],
+        "category": "dti",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q005",
+        "question": "What is the front-end DTI limit for FHA loans?",
+        "expected_answer": "31%",
+        "expected_sources": [
+            "underwriting_policies.md"
+        ],
+        "keywords": [
+            "31",
+            "front-end",
+            "FHA"
+        ],
+        "category": "dti",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q006",
+        "question": "How long is the waiting period after Chapter 7 bankruptcy?",
+        "expected_answer": "48 months",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "48",
+            "months",
+            "Chapter 7",
+            "bankruptcy"
+        ],
+        "category": "credit_history",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q007",
+        "question": "How long is the waiting period after foreclosure?",
+        "expected_answer": "36 months",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "36",
+            "months",
+            "foreclosure"
+        ],
+        "category": "credit_history",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q008",
+        "question": "What documentation is required for self-employed borrowers?",
+        "expected_answer": "Two years of personal and business tax returns, profit and loss statement, business license, year-to-date income statement",
+        "expected_sources": [
+            "underwriting_policies.md"
+        ],
+        "keywords": [
+            "tax returns",
+            "profit",
+            "loss",
+            "self-employed"
+        ],
+        "category": "documentation",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q009",
+        "question": "What is the maximum credit utilization rate that is acceptable without compensating factors?",
+        "expected_answer": "30%",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "30",
+            "utilization"
+        ],
+        "category": "credit_score",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q010",
+        "question": "What is the minimum down payment for first-time homebuyers with FHA loans?",
+        "expected_answer": "3.5% with credit score of 580 or higher",
+        "expected_sources": [
+            "underwriting_policies.md",
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "3.5",
+            "FHA",
+            "first-time"
+        ],
+        "category": "down_payment",
+        "difficulty": "easy"
+    },
+    {
+        "id": "q011",
+        "question": "What is the minimum credit score for small business loans under $100K?",
+        "expected_answer": "650",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "650",
+            "small business"
+        ],
+        "category": "credit_score",
+        "difficulty": "easy"
+    },
+    {
+        "id": "q012",
+        "question": "How many hard credit inquiries are allowed in the last 6 months?",
+        "expected_answer": "Maximum 3",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "3",
+            "inquiries"
+        ],
+        "category": "credit_history",
+        "difficulty": "easy"
+    },
+    {
+        "id": "q013",
+        "question": "What is the interest rate for credit scores 800 and above on personal loans?",
+        "expected_answer": "6.99% - 8.99%, typical rate 7.49%",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "6.99",
+            "8.99",
+            "7.49"
+        ],
+        "category": "interest_rates",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q014",
+        "question": "What is the minimum down payment required for conventional loans?",
+        "expected_answer": "5% (3% for first-time homebuyers)",
+        "expected_sources": [
+            "underwriting_policies.md"
+        ],
+        "keywords": [
+            "5%",
+            "3%",
+            "conventional"
+        ],
+        "category": "down_payment",
+        "difficulty": "medium"
+    },
+    {
+        "id": "q015",
+        "question": "What is considered a 'Poor' credit score range?",
+        "expected_answer": "300-579",
+        "expected_sources": [
+            "credit_scoring_manual.md"
+        ],
+        "keywords": [
+            "300",
+            "579",
+            "Poor"
+        ],
+        "category": "credit_score",
+        "difficulty": "easy"
+    }
+]
