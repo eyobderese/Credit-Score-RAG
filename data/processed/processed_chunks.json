@@ -3,13 +3,14 @@
     "content": "# Credit Scoring Manual\n\n## Document Information\n**Version:** 3.2  \n**Effective Date:** January 2026  \n**Department:** Risk Management  \n**Classification:** Internal Use Only\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 0,
-      "total_chunks": 9,
+      "page_chunk_index": 0,
+      "total_page_chunks": 9,
       "section": "Document Information"
     }
   },
@@ -17,13 +18,14 @@
     "content": "## 1. Credit Score Ranges and Risk Categories\n\n### 1.1 Score Classification\n\nOur credit scoring system uses a range of 300-850. Applicants are categorized as follows:\n\n| Credit Score Range | Risk Category | Default Risk | Approval Rate |\n|-------------------|---------------|--------------|---------------|\n| 800-850 | Exceptional | <1% | 98% |\n| 740-799 | Very Good | 1-2% | 95% |\n| 670-739 | Good | 3-5% | 85% |\n| 580-669 | Fair | 8-15% | 50% |\n| 300-579 | Poor | >20% | 10% |",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 1,
-      "total_chunks": 9,
+      "page_chunk_index": 1,
+      "total_page_chunks": 9,
       "section": "1. Credit Score Ranges and Risk Categories"
     }
   },
@@ -31,13 +33,14 @@
     "content": "### 1.2 Minimum Credit Score Requirements by Product\n\n**Personal Loans:**\n- Minimum credit score: 580\n- Preferred score: 670 or higher\n- Exception threshold: 550 (requires manual underwriting)\n\n**Mortgage Loans:**\n- Conventional: Minimum 620\n- FHA: Minimum 580 (with 3.5% down payment)\n- FHA: Minimum 500 (with 10% down payment)\n- Jumbo loans: Minimum 700\n\n**Business Loans:**\n- Small business (<$100K): Minimum 650\n- Medium business ($100K-$500K): Minimum 680\n- Large business (>$500K): Minimum 700\n\n**Auto Loans:**\n- New vehicles: Minimum 600\n- Used vehicles: Minimum 580\n- Luxury vehicles: Minimum 680\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 2,
-      "total_chunks": 9,
+      "page_chunk_index": 2,
+      "total_page_chunks": 9,
       "section": "1.2 Minimum Credit Score Requirements by Product"
     }
   },
@@ -45,13 +48,14 @@
     "content": "## 2. Interest Rate Tiers\n\nInterest rates are determined by credit score and loan product:\n\n### 2.1 Personal Loan Rates (APR)\n\n| Credit Score | Rate Range | Typical Rate |\n|--------------|------------|--------------|\n| 800+ | 6.99% - 8.99% | 7.49% |\n| 740-799 | 8.99% - 11.99% | 9.99% |\n| 670-739 | 11.99% - 15.99% | 13.49% |\n| 580-669 | 15.99% - 24.99% | 18.99% |\n\n### 2.2 Mortgage Rates (30-Year Fixed)\n\n- Exceptional credit (800+): Base rate + 0.00%\n- Very Good (740-799): Base rate + 0.25%\n- Good (670-739): Base rate + 0.50%\n- Fair (620-669): Base rate + 1.00%\n\nCurrent base rate: 6.75%\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 3,
-      "total_chunks": 9,
+      "page_chunk_index": 3,
+      "total_page_chunks": 9,
       "section": "2. Interest Rate Tiers"
     }
   },
@@ -59,13 +63,14 @@
     "content": "## 3. Credit History Requirements\n\n### 3.1 Minimum Account Age\n- At least 2 credit accounts open for 12+ months\n- Average account age: 24 months (preferred)\n- Minimum credit history length: 12 months\n\n### 3.2 Recent Inquiries\n- Hard inquiries in last 6 months: Maximum 3\n- Hard inquiries in last 12 months: Maximum 6\n- Multiple inquiries for same loan type within 14 days count as 1\n\n### 3.3 Derogatory Marks\n\n**Automatic Declination:**\n- Active bankruptcy (Chapter 7 or 13)\n- Foreclosure within 36 months\n- Repossession within 24 months\n\n**Waiting Periods After Resolution:**\n- Bankruptcy discharge: 24 months (Chapter 13), 48 months (Chapter 7)\n- Foreclosure completion: 36 months\n- Short sale: 24 months\n- Deed in lieu: 24 months\n\n**Acceptable with Conditions:**\n- Collections <$500 (no payment required)\n- Collections $500-$2,000 (payment plan acceptable)\n- Collections >$2,000 (must be paid or settled)\n- Medical collections: Ignored if <$1,000\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 4,
-      "total_chunks": 9,
+      "page_chunk_index": 4,
+      "total_page_chunks": 9,
       "section": "3. Credit History Requirements"
     }
   },
@@ -73,13 +78,14 @@
     "content": "## 4. Credit Utilization Standards\n\n### 4.1 Revolving Credit Utilization\n\n| Utilization Rate | Impact | Required for Approval |\n|------------------|--------|----------------------|\n| 0-10% | Excellent | Preferred |\n| 11-30% | Good | Acceptable |\n| 31-50% | Fair | Acceptable with compensating factors |\n| 51-75% | Poor | Requires explanation |\n| 76-100% | Very Poor | Generally declined |\n\n**Policy:** Applicants with >50% utilization must have compensating factors (high income, low DTI, excellent payment history).\n\n### 4.2 Individual Account Utilization\n- No single account should exceed 80% utilization\n- Maxed out accounts (>95%): Maximum 1 allowed\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 5,
-      "total_chunks": 9,
+      "page_chunk_index": 5,
+      "total_page_chunks": 9,
       "section": "4. Credit Utilization Standards"
     }
   },
@@ -87,13 +93,14 @@
     "content": "## 5. Payment History Requirements\n\n### 5.1 Late Payment Thresholds\n\n**Last 12 Months:**\n- 30-day late: Maximum 1 allowed\n- 60-day late: Not permitted\n- 90+ day late: Automatic decline\n\n**Last 24 Months:**\n- 30-day late: Maximum 2 allowed\n- 60-day late: Maximum 1 allowed\n- 90+ day late: Maximum 1 allowed (must be >18 months old)\n\n### 5.2 Payment History Score Weight\n- 0 late payments (24 months): 100% score\n- 1 late payment (30 days): -15 points\n- 2 late payments (30 days): -25 points\n- 1 late payment (60 days): -35 points\n- 1 late payment (90+ days): -50 points\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 6,
-      "total_chunks": 9,
+      "page_chunk_index": 6,
+      "total_page_chunks": 9,
       "section": "5. Payment History Requirements"
     }
   },
@@ -101,13 +108,14 @@
     "content": "## 6. Special Circumstances\n\n### 6.1 First-Time Borrowers\n- Credit score requirement reduced by 20 points\n- Requires co-signer if score <620\n- Minimum down payment: 15%\n\n### 6.2 Credit Builder Programs\n- Minimum score: 550\n- Maximum loan amount: $5,000\n- Required secured deposit: 25% of loan amount\n- APR: Fixed at 18.99%\n\n### 6.3 Military and Veterans\n- Score requirement reduced by 30 points for VA loans\n- Active duty: Additional 0.25% rate discount\n- Deployment exceptions for late payments in last 12 months\n\n---",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 7,
-      "total_chunks": 9,
+      "page_chunk_index": 7,
+      "total_page_chunks": 9,
       "section": "6. Special Circumstances"
     }
   },
@@ -115,13 +123,14 @@
     "content": "## 7. Score Adjustments and Overlays\n\n### 7.1 Compensating Factors (Add Points)\n- Income >150% of area median: +15 points\n- Debt-to-Income <25%: +10 points\n- Down payment >20%: +10 points\n- Liquid reserves >6 months: +15 points\n- Employment tenure >5 years: +5 points\n\n### 7.2 Risk Factors (Subtract Points)\n- Self-employed: -10 points\n- Declining income trend: -15 points\n- Job change in last 6 months: -10 points\n- High-risk industry: -20 points\n- Cash-out refinance: -5 points\n\n---\n\n## Revision History\n\n| Version | Date | Changes |\n|---------|------|---------|\n| 3.2 | Jan 2026 | Updated minimum scores for business loans |\n| 3.1 | Oct 2025 | Added credit builder program guidelines |\n| 3.0 | Jul 2025 | Major revision of risk categories |",
     "metadata": {
       "source": "credit_scoring_manual.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/credit_scoring_manual.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/credit_scoring_manual.md",
       "title": "Credit Scoring Manual",
       "version": "3.2",
       "effective_date": "January 2026",
       "department": "Risk Management",
       "chunk_index": 8,
-      "total_chunks": 9,
+      "page_chunk_index": 8,
+      "total_page_chunks": 9,
       "section": "7. Score Adjustments and Overlays"
     }
   },
@@ -129,13 +138,14 @@
     "content": "# Underwriting Policies and Procedures\n\n## Document Information\n**Version:** 4.1  \n**Effective Date:** January 2026  \n**Department:** Underwriting  \n**Classification:** Internal Use Only\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 0,
-      "total_chunks": 20,
+      "chunk_index": 9,
+      "page_chunk_index": 0,
+      "total_page_chunks": 20,
       "section": "Document Information"
     }
   },
@@ -143,13 +153,14 @@
     "content": "## 1. Documentation Requirements\n\n### 1.1 Credit Documentation\n\n**Required for All Applications:**\n- Tri-merge credit report (Equifax, Experian, TransUnion)\n- Credit report must be <120 days old at funding\n- Applicant written explanation for:\n  - Credit scores <680\n  - Credit inquiries in last 90 days\n  - Collections >$500\n  - Any derogatory marks in last 24 months\n\n### 1.2 Identity Verification\n\n**Primary Documents (Need 1):**\n- Valid government-issued photo ID (driver's license, passport, state ID)\n- ID must not expire within 90 days of application\n\n**Secondary Verification (Need 1):**\n- Recent utility bill (<60 days)\n- Bank statement showing address\n- Lease agreement or mortgage statement\n\n**Additional Requirements:**\n- SSN verification via credit report\n- For loan amounts >$100K: Additional photo ID or notarized signature",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 1,
-      "total_chunks": 20,
+      "chunk_index": 10,
+      "page_chunk_index": 1,
+      "total_page_chunks": 20,
       "section": "1. Documentation Requirements"
     }
   },
@@ -157,13 +168,14 @@
     "content": "### 1.3 Income Documentation by Source\n\n**W-2 Employees:**\n- Most recent 2 years W-2 forms\n- Most recent 30 days pay stubs\n- Verbal VOE (verification of employment)\n- Written VOE for loans >$250K\n\n**Self-Employed:**\n- Personal 1040 returns (2 years) with all schedules\n- Business returns (2 years): 1120, 1120S, 1065, Schedule C\n- Year-to-date P&L (signed by applicant)\n- CPA letter for loans >$250K\n- Business license/DBA registration\n\n**Retired:**\n- Social Security award letter\n- Pension/401K distribution letter\n- Most recent bank statements showing deposits (3 months)\n\n**Rental Income:**\n- Lease agreements (all properties)\n- Schedule E from tax returns (2 years)\n- Property tax bills\n- Mortgage statements for rental properties",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 2,
-      "total_chunks": 20,
+      "chunk_index": 11,
+      "page_chunk_index": 2,
+      "total_page_chunks": 20,
       "section": "1.3 Income Documentation by Source"
     }
   },
@@ -171,13 +183,14 @@
     "content": "### 1.4 Asset Documentation\n\n**Bank Accounts:**\n- Most recent 2 months statements\n- All pages required (including blank pages with page numbers)\n- Large deposits (>50% monthly income) must be sourced\n- Statements must show account holder name and account number\n\n**Retirement Accounts:**\n- Most recent quarterly statement\n- If using for reserves: Vesting schedule required\n\n**Investments:**\n- Most recent quarterly statement\n- 70% of current value used for qualification\n- Letter from broker if liquidation required\n\n**Gift Funds:**\n- Gift letter (signed by donor and donee)\n- Donor bank statement showing withdrawal\n- Donee bank statement showing deposit\n- Acceptable donors: Family members, employer (max $1000)\n- Minimum seasoning after deposit: 60 days OR proof of transfer\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 3,
-      "total_chunks": 20,
+      "chunk_index": 12,
+      "page_chunk_index": 3,
+      "total_page_chunks": 20,
       "section": "1.4 Asset Documentation"
     }
   },
@@ -185,13 +198,14 @@
     "content": "## 2. Property Documentation\n\n### 2.1 Appraisal Requirements\n\n**Standard Requirements:**\n- Licensed/certified appraiser\n- Uniform Residential Appraisal Report (Form 1004)\n- Comparable sales within 1 mile and 6 months\n- Minimum 3 comparable properties\n\n**Appraiser Qualifications:**\n- State licensed or certified\n- Not related to buyer, seller, or real estate agent\n- Experience with property type and geographic area\n\n**Review Requirements:**\n| Loan Amount | Review Type |\n|-------------|-------------|\n| <$250K | Desktop review |\n| $250K-$500K | Field review if value questioned |\n| >$500K | Mandatory field review or second appraisal |\n\n**Red Flags Requiring Second Appraisal:**\n- Value >10% above comparable sales\n- Declining market conditions\n- Unique/special use property\n- Rural location with limited comparables",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 4,
-      "total_chunks": 20,
+      "chunk_index": 13,
+      "page_chunk_index": 4,
+      "total_page_chunks": 20,
       "section": "2. Property Documentation"
     }
   },
@@ -199,13 +213,14 @@
     "content": "### 2.2 Title and Insurance\n\n**Title Search:**\n- Minimum 30-year title search\n- Title insurance policy required\n- Lender coverage equal to loan amount\n- Owner's policy recommended (not required)\n\n**Property Insurance:**\n- Hazard insurance equal to lesser of loan amount or replacement cost\n- Mortgagee clause naming lender\n- Proof of payment (first year prepaid at closing)\n- Continuous coverage verified annually\n\n**Additional Insurance by Property Type:**\n- Flood zone: Flood insurance (coverage \u2265 loan amount or max available)\n- Condominiums: HO-6 policy plus master policy review\n- Investment property: Loss of rents coverage recommended",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 5,
-      "total_chunks": 20,
+      "chunk_index": 14,
+      "page_chunk_index": 5,
+      "total_page_chunks": 20,
       "section": "2.2 Title and Insurance"
     }
   },
@@ -213,13 +228,14 @@
     "content": "### 2.3 Property Condition Requirements\n\n**Minimum Standards:**\n- Property must be safe, sound, and structurally secure\n- All appliances included in sale must be operational\n- Heating/cooling systems operational\n- No health or safety hazards\n- No adverse environmental conditions\n\n**Repairs Required:**\n- Defective roof\n- Faulty electrical, plumbing, or HVAC\n- Structural damage\n- Pest infestation evidence\n- Peeling/chipping paint (pre-1978 construction)\n\n**Maximum Repair Threshold:**\n- Repairs <$2,500: Seller can complete before closing\n- Repairs $2,500-$10,000: Escrow holdback allowed (150% of cost)\n- Repairs >$10,000: Must be completed before closing with re-inspection\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 6,
-      "total_chunks": 20,
+      "chunk_index": 15,
+      "page_chunk_index": 6,
+      "total_page_chunks": 20,
       "section": "2.3 Property Condition Requirements"
     }
   },
@@ -227,13 +243,14 @@
     "content": "## 3. Loan Structure Requirements\n\n### 3.1 Term Limits by Product\n\n**Mortgages:**\n- Maximum term: 360 months (30 years)\n- Minimum term: 60 months (5 years)\n- Standard terms: 15, 20, 30 years\n\n**Personal Loans:**\n- Maximum term: 84 months (7 years)\n- Minimum term: 12 months\n- Standard terms: 36, 60, 84 months\n\n**Auto Loans:**\n- New vehicles: Maximum 72 months\n- Used vehicles (0-5 years): Maximum 66 months\n- Used vehicles (6-10 years): Maximum 48 months\n- Classic/collector vehicles: Case-by-case approval\n\n**Business Loans:**\n- Equipment financing: Maximum 84 months\n- Working capital: Maximum 60 months\n- Commercial real estate: Maximum 300 months (25 years)",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 7,
-      "total_chunks": 20,
+      "chunk_index": 16,
+      "page_chunk_index": 7,
+      "total_page_chunks": 20,
       "section": "3. Loan Structure Requirements"
     }
   },
@@ -241,13 +258,14 @@
     "content": "### 3.2 Loan Amount Limits\n\n**Personal Loans:**\n- Minimum: $1,000\n- Maximum: $50,000 (unsecured)\n- Maximum: $100,000 (secured)\n\n**Mortgage Loans:**\n- Conventional conforming: $766,550 (2026 limit, single unit)\n- Jumbo: $766,551 to $3,000,000\n- Super jumbo (>$3M): Chief Credit Officer approval required\n\n**Business Loans:**\n- Minimum: $10,000\n- Maximum: $500,000 (delegated authority)\n- >$500,000: Credit committee approval required\n\n### 3.3 Rate Lock Policies\n\n**Lock Period Options:**\n- 15 days: Base rate - 0.125%\n- 30 days: Base rate (no adjustment)\n- 45 days: Base rate + 0.125%\n- 60 days: Base rate + 0.250%\n\n**Lock Extension:**\n- First 15 days: 0.125% per extension\n- Extensions beyond 15 days: 0.25% per 15 days\n- Maximum lock period (including extensions): 90 days\n\n**Float-Down Option:**\n- Available if rate decreases by >0.25% during lock\n- Fee: 0.25% of loan amount\n- Must be elected within 5 days of rate change\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 8,
-      "total_chunks": 20,
+      "chunk_index": 17,
+      "page_chunk_index": 8,
+      "total_page_chunks": 20,
       "section": "3.2 Loan Amount Limits"
     }
   },
@@ -255,13 +273,14 @@
     "content": "## 4. Automated Underwriting Systems\n\n### 4.1 DU/LP Approval Levels\n\n**Accept/Approve:**\n- Proceed with standard documentation\n- No manual underwriting required\n- Conditional approval issued\n\n**Refer with Caution:**\n- Manual underwrite required\n- Detailed documentation needed\n- Compensating factors must be demonstrated\n- Senior underwriter review required\n\n**Refer/Ineligible:**\n- Does not meet automated guidelines\n- Manual underwrite with enhanced documentation\n- Manager approval required\n- May require guideline exceptions\n\n### 4.2 Manual Underwriting Criteria\n\n**When Required:**\n- Credit score <680\n- Non-traditional credit\n- Self-employed <2 years\n- DTI >43%\n- Significant derogatory credit\n- Complex income sources\n\n**Additional Documentation Requirements:**\n- 12 months payment history on all debts\n- Rental verification (12 months)\n- Utility payment history\n- Non-traditional credit references (if applicable)",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 9,
-      "total_chunks": 20,
+      "chunk_index": 18,
+      "page_chunk_index": 9,
+      "total_page_chunks": 20,
       "section": "4. Automated Underwriting Systems"
     }
   },
@@ -269,13 +288,14 @@
     "content": "### 4.3 Non-Traditional Credit\n\n**Acceptable Sources (Minimum 3 Required):**\n- Rent payments (verified by landlord or 12 months cancelled checks)\n- Utility payments (electric, gas, water, cable/internet)\n- Insurance payments (auto, life, health)\n- Childcare payments\n- School tuition payments\n\n**Requirements:**\n- 12-month payment history\n- No payments >30 days late\n- Documented via cancelled checks, bank statements, or provider verification\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 10,
-      "total_chunks": 20,
+      "chunk_index": 19,
+      "page_chunk_index": 10,
+      "total_page_chunks": 20,
       "section": "4.3 Non-Traditional Credit"
     }
   },
@@ -283,13 +303,14 @@
     "content": "## 5. Special Program Guidelines\n\n### 5.1 First-Time Homebuyer Program\n\n**Eligibility:**\n- No home ownership in past 3 years\n- Completed homebuyer education course (8 hours minimum)\n- Credit score minimum: 640\n- Income limits: 115% of area median income\n\n**Benefits:**\n- Down payment: As low as 3%\n- Down payment assistance: Available up to 3% of purchase price\n- Rate reduction: 0.25% below standard rate\n- Reduced closing costs\n\n**Requirements:**\n- Primary residence only\n- Occupancy within 60 days of closing\n- Cannot sell or refinance within 12 months without penalty\n- Annual recertification (if down payment assistance received)",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 11,
-      "total_chunks": 20,
+      "chunk_index": 20,
+      "page_chunk_index": 11,
+      "total_page_chunks": 20,
       "section": "5. Special Program Guidelines"
     }
   },
@@ -297,13 +318,14 @@
     "content": "### 5.2 Energy-Efficient Mortgage (EEM)\n\n**Purpose:**\n- Finance energy efficiency improvements\n- Up to 15% of appraised value added to loan amount\n\n**Eligible Improvements:**\n- Solar panels\n- High-efficiency HVAC\n- Insulation upgrades\n- Energy-efficient windows/doors\n- Energy Star appliances\n\n**Requirements:**\n- Energy audit required (cost can be financed)\n- Projected savings must exceed payment increase\n- Maximum addition to loan: $8,000\n- Improvements must be completed within 90 days of closing\n\n### 5.3 Physician Loan Program\n\n**Eligibility:**\n- MD, DO, DMD, DDS degree\n- Within 5 years of residency completion\n- Signed employment contract or proof of practice\n\n**Benefits:**\n- No PMI required up to 95% LTV\n- Student loan payment: Use 0.5% of balance (instead of actual payment)\n- No seasoned funds required\n- Contract/future income may be used\n\n**Requirements:**\n- Minimum credit score: 700\n- DTI maximum: 45%\n- Loan amount: $500,000 to $1,500,000\n- Primary residence only\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 12,
-      "total_chunks": 20,
+      "chunk_index": 21,
+      "page_chunk_index": 12,
+      "total_page_chunks": 20,
       "section": "5.2 Energy-Efficient Mortgage (EEM)"
     }
   },
@@ -311,13 +333,14 @@
     "content": "## 6. Conditional Approval Standards\n\n### 6.1 Standard Conditions\n\n**Credit Conditions:**\n- Updated credit report (if >90 days from original)\n- Satisfactory explanation letters\n- Payment of collections (if required)\n- Subordination of liens (if applicable)\n\n**Income Conditions:**\n- Verbal VOE within 10 days of closing\n- Final pay stub within 30 days of closing\n- IRS 4506-C signed\n- Award/benefit letters (if applicable)\n\n**Asset Conditions:**\n- Updated bank statements to within 60 days of closing\n- Large deposit explanations\n- Gift fund documentation\n- Down payment verification\n\n**Property Conditions:**\n- Clear title report\n- Satisfactory appraisal\n- Homeowner's insurance binder\n- HOA documentation (if applicable)\n- Well/septic inspection (if applicable)\n\n### 6.2 Prior to Document Conditions (PTD)\n\nMust be cleared before loan documents prepared:\n- Credit score verifications\n- Income calculations\n- Asset verifications\n- Property valuation\n- Title report preliminary review",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 13,
-      "total_chunks": 20,
+      "chunk_index": 22,
+      "page_chunk_index": 13,
+      "total_page_chunks": 20,
       "section": "6. Conditional Approval Standards"
     }
   },
@@ -325,13 +348,14 @@
     "content": "### 6.3 Prior to Funding Conditions (PTF)\n\nMust be cleared before loan funds disbursed:\n- Final executed loan documents\n- Funding authorization from all parties\n- Clear to close issued\n- Final walkthrough completed\n- Hazard insurance policy active\n- Final title policy issued\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 14,
-      "total_chunks": 20,
+      "chunk_index": 23,
+      "page_chunk_index": 14,
+      "total_page_chunks": 20,
       "section": "6.3 Prior to Funding Conditions (PTF)"
     }
   },
@@ -339,13 +363,14 @@
     "content": "## 7. Quality Control Standards\n\n### 7.1 Pre-Funding Review\n\n**10% Random Sample:**\n- Selected randomly via system\n- Full file review by QC department\n- Must be cleared before funding\n\n**Discretionary Reviews:**\n- First-time underwriter loans\n- Exception approvals\n- Loans with >2 conditions\n- High-risk attributes present\n\n### 7.2 Post-Funding Audit\n\n**30-Day Post-Closing:**\n- 15% of all loans reviewed\n- Compliance verification\n- Documentation completeness\n- Underwriting accuracy\n\n**Findings Categories:**\n- Administrative: Minor documentation issues\n- Underwriting: Judgment or calculation errors\n- Compliance: Regulatory violations\n\n**Corrective Actions:**\n| Severity | Action |\n|----------|--------|\n| Minor | Underwriter coaching |\n| Moderate | File review by manager, additional training |\n| Severe | Removal of delegated authority, formal write-up |\n| Critical | Suspension pending investigation |",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 15,
-      "total_chunks": 20,
+      "chunk_index": 24,
+      "page_chunk_index": 15,
+      "total_page_chunks": 20,
       "section": "7. Quality Control Standards"
     }
   },
@@ -353,13 +378,14 @@
     "content": "### 7.3 Fraud Prevention\n\n**Verification Requirements:**\n- IRS 4506-C on all loans\n- Tax transcript review for self-employed\n- Direct employer verification (no applicant phone numbers)\n- Bank statements verified via financial institution portal (when available)\n\n**Red Flag Response:**\n1. Document finding\n2. Escalate to QC manager immediately\n3. Enhanced verification on ALL documentation\n4. Legal department notification (if fraud suspected)\n5. Application withdrawal or funding hold\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 16,
-      "total_chunks": 20,
+      "chunk_index": 25,
+      "page_chunk_index": 16,
+      "total_page_chunks": 20,
       "section": "7.3 Fraud Prevention"
     }
   },
@@ -367,13 +393,14 @@
     "content": "## 8. Closing and Funding\n\n### 8.1 Clear to Close Criteria\n\n**All Conditions Met:**\n- All PTD conditions cleared\n- All PTF conditions cleared\n- Underwriter final sign-off\n- QC review completed (if selected)\n\n**Timing:**\n- Clear to close issued minimum 72 hours before closing\n- Documentation package sent to title company\n- Funding authorization prepared\n\n### 8.2 Closing Disclosure Review\n\n**Required Review Period:**\n- Initial CD: Provided 7 business days before closing\n- Revised CD (APR change >0.125%): Additional 3 business day waiting period\n- Minor corrections: No additional waiting period\n\n**Tolerance Violations:**\n- Zero tolerance items (>$0 increase): Cure required\n- 10% cumulative tolerance exceeded: Cure required\n- Cure methods: Seller credit, lender credit, fee reduction",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 17,
-      "total_chunks": 20,
+      "chunk_index": 26,
+      "page_chunk_index": 17,
+      "total_page_chunks": 20,
       "section": "8. Closing and Funding"
     }
   },
@@ -381,13 +408,14 @@
     "content": "### 8.3 Funding Authorization\n\n**Required Approvals:**\n| Loan Amount | Authorization Required |\n|-------------|----------------------|\n| <$150K | Underwriter |\n| $150K-$500K | Senior underwriter |\n| $500K-$1M | Underwriting manager |\n| >$1M | Chief Credit Officer |\n\n**Final Verifications:**\n- Loan documents executed and notarized\n- Closing figures balanced\n- Title company wiring instructions verified\n- OFAC check completed\n- Final quality control sign-off\n\n---",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 18,
-      "total_chunks": 20,
+      "chunk_index": 27,
+      "page_chunk_index": 18,
+      "total_page_chunks": 20,
       "section": "8.3 Funding Authorization"
     }
   },
@@ -395,13 +423,14 @@
     "content": "## Revision History\n\n| Version | Date | Changes |\n|---------|------|---------|\n| 4.1 | Jan 2026 | Added physician loan program guidelines |\n| 4.0 | Oct 2025 | Major revision of documentation requirements |\n| 3.9 | Aug 2025 | Updated appraisal review thresholds |",
     "metadata": {
       "source": "underwriting_policies.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/underwriting_policies.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/underwriting_policies.md",
       "title": "Underwriting Policies and Procedures",
       "version": "4.1",
       "effective_date": "January 2026",
       "department": "Underwriting",
-      "chunk_index": 19,
-      "total_chunks": 20,
+      "chunk_index": 28,
+      "page_chunk_index": 19,
+      "total_page_chunks": 20,
       "section": "Revision History"
     }
   },
@@ -409,13 +438,14 @@
     "content": "# Risk Assessment Guidelines\n\n## Document Information\n**Version:** 2.8  \n**Effective Date:** January 2026  \n**Department:** Risk Management & Underwriting  \n**Classification:** Internal Use Only\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 0,
-      "total_chunks": 17,
+      "chunk_index": 29,
+      "page_chunk_index": 0,
+      "total_page_chunks": 17,
       "section": "Document Information"
     }
   },
@@ -423,13 +453,14 @@
     "content": "## 1. Debt-to-Income (DTI) Ratio Standards\n\n### 1.1 DTI Calculation Method\n\n**Front-End DTI (Housing Ratio):**\n```\nFront-End DTI = (Monthly Housing Expenses) / (Gross Monthly Income)\n```\n\nMonthly Housing Expenses include:\n- Principal and interest\n- Property taxes\n- Homeowner's insurance\n- HOA fees\n- Mortgage insurance (if applicable)\n\n**Back-End DTI (Total Debt Ratio):**\n```\nBack-End DTI = (Total Monthly Debt Payments) / (Gross Monthly Income)\n```",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 1,
-      "total_chunks": 17,
+      "chunk_index": 30,
+      "page_chunk_index": 1,
+      "total_page_chunks": 17,
       "section": "1. Debt-to-Income (DTI) Ratio Standards"
     }
   },
@@ -437,13 +468,14 @@
     "content": "### 1.2 Maximum DTI Ratios by Product\n\n**Conventional Mortgages:**\n- Front-End DTI: Maximum 28%\n- Back-End DTI: Maximum 36%\n- Exception approval: Up to 43% with compensating factors\n\n**FHA Mortgages:**\n- Front-End DTI: Maximum 31%\n- Back-End DTI: Maximum 43%\n- Automated approval: Available up to 50% with credit score \u2265680\n\n**Personal Loans:**\n- Back-End DTI: Maximum 43%\n- Preferred: \u226436%\n\n**Business Loans:**\n- Debt Service Coverage Ratio (DSCR): Minimum 1.25\n- Personal DTI (for personal guarantee): Maximum 45%\n\n**Auto Loans:**\n- Payment-to-Income (PTI) Ratio: Maximum 15%\n- Back-End DTI: Maximum 45%\n\n### 1.3 DTI Compensating Factors\n\nApplicants exceeding standard DTI may qualify with:\n- Credit score \u2265740: +5% DTI allowance\n- Cash reserves \u226512 months: +5% DTI allowance\n- Minimal increase in housing payment (<10%): +3% DTI allowance\n- Significant non-taxable income: +4% DTI allowance\n\n**Maximum combined allowance:** 10% above standard limits\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 2,
-      "total_chunks": 17,
+      "chunk_index": 31,
+      "page_chunk_index": 2,
+      "total_page_chunks": 17,
       "section": "1.2 Maximum DTI Ratios by Product"
     }
   },
@@ -451,13 +483,14 @@
     "content": "## 2. Collateral Requirements\n\n### 2.1 Loan-to-Value (LTV) Ratios\n\n**Primary Residence - Purchase:**\n| Credit Score | Maximum LTV | Minimum Down Payment |\n|--------------|-------------|---------------------|\n| 740+ | 97% | 3% |\n| 680-739 | 95% | 5% |\n| 620-679 | 90% | 10% |\n| <620 | 80% | 20% |\n\n**Primary Residence - Refinance:**\n- Credit score \u2265740: Maximum 95% LTV\n- Credit score 680-739: Maximum 90% LTV\n- Credit score 620-679: Maximum 85% LTV\n- Cash-out refinance: Maximum 80% LTV\n\n**Investment Property:**\n- Single unit: Maximum 75% LTV\n- 2-4 units: Maximum 70% LTV\n- Minimum credit score: 680\n- Minimum reserves: 6 months PITI\n\n**Commercial Property:**\n- Owner-occupied: Maximum 80% LTV\n- Non-owner occupied: Maximum 70% LTV\n- Special use property: Maximum 65% LTV",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 3,
-      "total_chunks": 17,
+      "chunk_index": 32,
+      "page_chunk_index": 3,
+      "total_page_chunks": 17,
       "section": "2. Collateral Requirements"
     }
   },
@@ -465,13 +498,14 @@
     "content": "### 2.2 Vehicle Collateral Standards\n\n**Auto Loans:**\n- New vehicles (current model year): Maximum 120% LTV\n- New vehicles (prior model year): Maximum 110% LTV\n- Used vehicles (2-4 years old): Maximum 110% LTV\n- Used vehicles (5-7 years old): Maximum 100% LTV\n- Used vehicles (8+ years old): Not eligible\n\n**Required vehicle value verification:**\n- NADA, KBB, or Edmunds average trade-in value\n- Minimum of 2 valuation sources required\n- Use lower of values if discrepancy >10%\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 4,
-      "total_chunks": 17,
+      "chunk_index": 33,
+      "page_chunk_index": 4,
+      "total_page_chunks": 17,
       "section": "2.2 Vehicle Collateral Standards"
     }
   },
@@ -479,13 +513,14 @@
     "content": "## 3. Industry Risk Classifications\n\n### 3.1 Low-Risk Industries (Standard Terms)\n\n- Healthcare (established practices)\n- Education\n- Government contractors\n- Utilities\n- Professional services (legal, accounting)\n\n**Benefits:**\n- Standard underwriting criteria\n- No additional reserves required\n- Standard interest rates\n\n### 3.2 Medium-Risk Industries (Enhanced Review)\n\n- Retail\n- Manufacturing\n- Hospitality\n- Transportation\n- Technology services\n\n**Requirements:**\n- 3 months bank statements required\n- Business history: Minimum 2 years\n- Additional reserves: 3 months operating expenses",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 5,
-      "total_chunks": 17,
+      "chunk_index": 34,
+      "page_chunk_index": 5,
+      "total_page_chunks": 17,
       "section": "3. Industry Risk Classifications"
     }
   },
@@ -493,13 +528,14 @@
     "content": "### 3.3 High-Risk Industries (Strict Requirements)\n\n- Restaurants and bars\n- Construction\n- Oil and gas\n- Real estate speculation\n- Startups (<2 years operating history)\n\n**Requirements:**\n- Credit score: +20 points above standard\n- DTI ratio: -5% from standard maximum\n- Down payment: +10% above standard\n- Additional reserves: 6 months operating expenses\n- Interest rate: +1.5% to +2.5% above base rate\n- Personal guarantee required for business loans\n\n### 3.4 Prohibited Industries\n\nThe following industries are not eligible for financing:\n- Cannabis (where federally illegal)\n- Adult entertainment\n- Gambling operations\n- Payday lending\n- Speculative cryptocurrency ventures\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 6,
-      "total_chunks": 17,
+      "chunk_index": 35,
+      "page_chunk_index": 6,
+      "total_page_chunks": 17,
       "section": "3.3 High-Risk Industries (Strict Requirements)"
     }
   },
@@ -507,13 +543,14 @@
     "content": "## 4. Income Verification Standards\n\n### 4.1 W-2 Employees\n\n**Standard Documentation:**\n- Most recent 2 years W-2 forms\n- Most recent 30 days pay stubs\n- Verbal or written employment verification\n\n**Stability Requirements:**\n- Current employer: Minimum 2 years\n- OR same industry: Minimum 2 years with 30-day gap maximum\n- Job change in last 6 months: Requires 60-day employment verification\n\n**Income Calculation:**\n- Base salary: Use current annual rate\n- Overtime/bonus: Must have 2-year history, use average\n- Commission: Must have 2-year history, use lesser of average or YTD trend",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 7,
-      "total_chunks": 17,
+      "chunk_index": 36,
+      "page_chunk_index": 7,
+      "total_page_chunks": 17,
       "section": "4. Income Verification Standards"
     }
   },
@@ -521,13 +558,14 @@
     "content": "### 4.2 Self-Employed Borrowers\n\n**Documentation Required:**\n- Personal tax returns (2 years) with all schedules\n- Business tax returns (2 years) if applicable\n- Year-to-date profit & loss statement\n- Business license (if applicable)\n- CPA letter (loans >$250K)\n\n**Income Calculation:**\n- Use lesser of 2-year average or most recent year\n- Add back: depreciation, depletion, casualty losses\n- Subtract: one-time income items\n- Declining income (>10% year-over-year): Use most recent year only\n\n**Minimum Requirements:**\n- Business history: 2 years minimum\n- Credit score: +10 points above standard for same product\n- Reserves: 6 months PITI or operating expenses",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 8,
-      "total_chunks": 17,
+      "chunk_index": 37,
+      "page_chunk_index": 8,
+      "total_page_chunks": 17,
       "section": "4.2 Self-Employed Borrowers"
     }
   },
@@ -535,13 +573,14 @@
     "content": "### 4.3 Non-Traditional Income\n\n**Rental Income:**\n- Use 75% of gross rental income\n- Requires lease agreement and 2 years tax return documentation\n- Negative rental history: Full amount counted against DTI\n\n**Investment Income:**\n- 2-year history required via tax returns\n- Use lesser of 2-year average or current year\n- Continuance: Must verify assets remain invested\n\n**Social Security/Pension:**\n- Must continue for at least 3 years\n- Award letter or bank statements required\n- Full amount may be used\n\n**Alimony/Child Support:**\n- Must be received for minimum 12 months\n- Must continue for at least 3 years\n- Court order or separation agreement required\n- Proof of receipt (6 months bank statements)\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 9,
-      "total_chunks": 17,
+      "chunk_index": 38,
+      "page_chunk_index": 9,
+      "total_page_chunks": 17,
       "section": "4.3 Non-Traditional Income"
     }
   },
@@ -549,13 +588,14 @@
     "content": "## 5. Liquid Reserves Requirements\n\n### 5.1 Reserve Calculation\n\n**One Month Reserve Equals:**\n- Principal + Interest\n- Property taxes\n- Insurance\n- HOA fees\n- Mortgage insurance\n\n### 5.2 Minimum Reserves by Property Type\n\n**Primary Residence:**\n- 1 unit: 2 months\n- 2 units: 3 months\n- 3-4 units: 6 months\n\n**Second Home:**\n- Minimum: 2 months\n- Preferred: 4 months\n\n**Investment Property:**\n- 1 property: 6 months\n- 2 properties: 9 months\n- 3+ properties: 12 months\n\n**Business Loans:**\n- Standard risk: 3 months operating expenses\n- Medium risk: 6 months operating expenses\n- High risk: 9 months operating expenses",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 10,
-      "total_chunks": 17,
+      "chunk_index": 39,
+      "page_chunk_index": 10,
+      "total_page_chunks": 17,
       "section": "5. Liquid Reserves Requirements"
     }
   },
@@ -563,13 +603,14 @@
     "content": "### 5.3 Acceptable Reserve Assets\n\n**100% Credit:**\n- Checking/savings accounts\n- Money market accounts\n- Certificates of deposit (without early withdrawal penalty)\n- Stocks, bonds, mutual funds (70% of value)\n\n**Partial Credit:**\n- Retirement accounts (60% of value after tax/penalty)\n- Stocks subject to vesting (50% of vested value)\n- Cash value life insurance (100% of cash surrender value)\n\n**Not Acceptable:**\n- Borrowed funds\n- Unsecured credit lines\n- Gift funds (unless properly documented and seasoned)\n- Non-vested stock options\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 11,
-      "total_chunks": 17,
+      "chunk_index": 40,
+      "page_chunk_index": 11,
+      "total_page_chunks": 17,
       "section": "5.3 Acceptable Reserve Assets"
     }
   },
@@ -577,13 +618,14 @@
     "content": "## 6. Geographic Risk Factors\n\n### 6.1 Market Conditions\n\n**Stable Markets (Tier 1):**\n- Major metropolitan areas with diverse economies\n- Population growth >2% annually\n- Unemployment rate <5%\n- Standard underwriting criteria apply\n\n**Moderate Risk Markets (Tier 2):**\n- Mid-size cities with stable employment\n- Population growth 0-2% annually\n- Unemployment rate 5-7%\n- Additional scrutiny on appraisals\n- LTV reduced by 5% for investment properties\n\n**Declining Markets (Tier 3):**\n- Single-industry dependent areas\n- Population decline or stagnation\n- Unemployment rate >7%\n- LTV reduced by 10% across all products\n- Additional reserves required (+2 months)\n- Second homes/investment properties: Case-by-case approval",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 12,
-      "total_chunks": 17,
+      "chunk_index": 41,
+      "page_chunk_index": 12,
+      "total_page_chunks": 17,
       "section": "6. Geographic Risk Factors"
     }
   },
@@ -591,13 +633,14 @@
     "content": "### 6.2 Disaster-Prone Areas\n\n**Properties in FEMA Flood Zones:**\n- Flood insurance required\n- Additional reserves: +1 month\n- Maximum LTV: 90% (primary residence), 75% (investment)\n\n**Earthquake Zones:**\n- Earthquake insurance required for loans >$500K\n- Foundation inspection required for structures >25 years old\n\n**Hurricane-Prone Coastal Areas:**\n- Windstorm insurance required\n- Property inspection required annually for investment properties\n- Additional reserves: +2 months\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 13,
-      "total_chunks": 17,
+      "chunk_index": 42,
+      "page_chunk_index": 13,
+      "total_page_chunks": 17,
       "section": "6.2 Disaster-Prone Areas"
     }
   },
@@ -605,13 +648,14 @@
     "content": "## 7. Fraud Risk Indicators\n\n### 7.1 Red Flags - Automatic Escalation\n\n**Application Red Flags:**\n- Address discrepancies across documents\n- Recent name changes without documentation\n- SSN issued in different state than claimed residence history\n- Employment verification number matches applicant phone\n- Multiple applications with different information\n\n**Income Red Flags:**\n- Pay stubs with calculation errors\n- Employer not verifiable via public records\n- Round numbers on pay stubs (no cents)\n- Mismatched fonts on employment documents\n- Tax returns without IRS tax transcript verification\n\n**Asset Red Flags:**\n- Bank statements without full account numbers\n- Large recent deposits without sourcing\n- Sequential statement dates but non-sequential balances\n- Digital manipulation of statements\n- Funds transferred between accounts to inflate reserves",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 14,
-      "total_chunks": 17,
+      "chunk_index": 43,
+      "page_chunk_index": 14,
+      "total_page_chunks": 17,
       "section": "7. Fraud Risk Indicators"
     }
   },
@@ -619,13 +663,14 @@
     "content": "### 7.2 Enhanced Due Diligence Requirements\n\nWhen red flags identified:\n1. Direct verification with third parties (mandatory)\n2. IRS tax transcript (4506-C) required\n3. Additional 2 months bank statements\n4. Personal interview with underwriter\n5. Management approval required\n6. Minimum 15-day funding delay for verification\n\n---",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 15,
-      "total_chunks": 17,
+      "chunk_index": 44,
+      "page_chunk_index": 15,
+      "total_page_chunks": 17,
       "section": "7.2 Enhanced Due Diligence Requirements"
     }
   },
@@ -633,13 +678,14 @@
     "content": "## 8. Exception Approval Authority\n\n### 8.1 Authority Limits\n\n**Senior Underwriter:**\n- Single guideline variance\n- Loan amount <$250,000\n- Variance impact <5% of guideline\n\n**Underwriting Manager:**\n- Up to 2 guideline variances\n- Loan amount <$500,000\n- Variance impact <10% of guideline\n\n**Chief Credit Officer:**\n- Multiple variances\n- Any loan amount\n- Any variance level\n- Final authority on all exceptions\n\n### 8.2 Non-Delegable Requirements\n\nThe following CANNOT be excepted under any circumstances:\n- Minimum credit score <550\n- Active bankruptcy\n- Fraud indicators\n- Prohibited industries\n- DTI >55% (any product)\n- LTV >100% (any product)\n\n---\n\n## Revision History\n\n| Version | Date | Changes |\n|---------|------|---------|\n| 2.8 | Jan 2026 | Updated DTI limits for FHA products |\n| 2.7 | Nov 2025 | Added cryptocurrency industry to prohibited list |\n| 2.6 | Sep 2025 | Revised reserve requirements for investment properties |",
     "metadata": {
       "source": "risk_assessment_guidelines.md",
-      "file_path": "/Users/eyobderese/.gemini/antigravity/scratch/credit-scoring-rag/data/raw/risk_assessment_guidelines.md",
+      "file_path": "/Users/abdulmunimjundurahman/Class/Credit-Score-RAG/data/raw/risk_assessment_guidelines.md",
       "title": "Risk Assessment Guidelines",
       "version": "2.8",
       "effective_date": "January 2026",
       "department": "Risk Management & Underwriting",
-      "chunk_index": 16,
-      "total_chunks": 17,
+      "chunk_index": 45,
+      "page_chunk_index": 16,
+      "total_page_chunks": 17,
       "section": "8. Exception Approval Authority"
     }
   }

@@ -1,474 +1,323 @@
-# Credit Scoring RAG System 🏦
+# Credit Scoring RAG Platform v2.0 🏦🤖
 
-A production-ready **Retrieval-Augmented Generation (RAG)** system designed to answer questions about internal credit policies, scoring rules, and underwriting guidelines with high accuracy and minimal hallucination.
+A **production-grade Retrieval-Augmented Generation (RAG)** platform for answering questions about credit policies, scoring rules, and underwriting guidelines with comprehensive evaluation and experimentation capabilities.
 
-## 📋 Table of Contents
+## 🎯 Project Overview
 
-- [Overview](#overview)
-- [Features](#features)
-- [System Architecture](#system-architecture)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Data Sources](#data-sources)
-- [Testing](#testing)
-- [Project Structure](#project-structure)
-- [API Reference](#api-reference)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
+This is an AI course term project that combines:
+- **Modern Full-Stack Architecture**: FastAPI backend + React frontend
+- **RAG Pipeline**: LangChain + ChromaDB + Groq LLMs
+- **Evaluation Framework**: Comprehensive metrics and test sets
+- **Experimentation Tools**: Ablation studies and configuration comparison
 
-## 🎯 Overview
+---
 
-This Credit Scoring Policy Assistant leverages RAG technology to provide accurate, source-backed answers to questions about:
+## 🏗️ Architecture
 
-- **Credit scoring requirements** (minimum scores, risk categories, rate tiers)
-- **Underwriting policies** (documentation requirements, loan structure, conditional approvals)
-- **Risk assessment guidelines** (DTI ratios, collateral requirements, industry classifications)
-
-### Key Benefits
-
-✅ **High Accuracy**: Retrieves exact thresholds from source documents  
-✅ **Zero Hallucination**: All responses are grounded in actual policy documents  
-✅ **Source Attribution**: Every answer includes citations to source material  
-✅ **Trustworthy**: Designed for fintech compliance and risk management  
-
-## ✨ Features
-
-- **Semantic Search**: Uses advanced embeddings to find relevant policy sections
-- **Intelligent Chunking**: Optimally splits documents to preserve context
-- **Multi-Format Support**: Handle **Markdown (.md)** and **PDF (.pdf)** documents
-- **Interactive UI**: Clean Streamlit interface for easy interaction
-- **Dynamic Ingestion**: Upload and index new documents directly from the UI
-- **Confidence Scoring**: Provides confidence levels for each answer
-- **Debug Mode**: View retrieved chunks and relevance scores
-- **Evaluation Metrics**: Built-in tools to measure accuracy and quality
-
-## 🏗️ System Architecture
-
-```mermaid
-graph LR
-    A[User Query] --> B[Retriever]
-    B --> C[Vector Store<br/>ChromaDB]
-    C --> D[Top-K Relevant<br/>Chunks]
-    D --> E[LLM Generator<br/>Groq API]
-    E --> F[Grounded Response<br/>with Sources]
-    
-    G[Policy Documents] --> H[Document Processor]
-    H --> I[Chunking +<br/>Metadata]
-    I --> J[Embedding Model]
-    J --> C
+```
+┌─────────────────┐      ┌──────────────────┐      ┌─────────────────┐
+│  React Frontend │ ───▶ │  FastAPI Backend │ ───▶ │   ChromaDB      │
+│   (TypeScript)  │      │      (Python)    │      │ (Vector Store)  │
+└─────────────────┘      └──────────────────┘      └─────────────────┘
+                                  │
+                                  ▼
+                         ┌──────────────────┐
+                         │  Groq LLM API    │
+                         │  (Llama 3.1)     │
+                         └──────────────────┘
 ```
 
-### Components
+---
 
-1. **Document Processor**: Loads and chunks policy documents
-2. **Vector Store**: ChromaDB with sentence-transformers embeddings
-3. **Retriever**: Semantic search with similarity filtering
-4. **LLM Handler**: Groq API integration for response generation
-5. **RAG Pipeline**: Orchestrates retrieval + generation workflow
-6. **Streamlit UI**: User-friendly web interface
+## 📦 Technology Stack
 
-## 📦 Prerequisites
+### Backend
+- **FastAPI**: Modern Python web framework
+- **LangChain**: RAG orchestration
+- **ChromaDB**: Vector database
+- **Sentence Transformers**: Embeddings
+- **Groq**: LLM inference
 
-- **Python**: 3.8 or higher
-- **Groq API Key**: Sign up at [groq.com](https://groq.com)
-- **Operating System**: macOS, Linux, or Windows
+### Frontend
+- **React**: UI library
+- **TypeScript**: Type safety
+- **Vite**: Build tool
+- **Zustand**: State management
+- **Recharts**: Data visualization
+- **Lucide React**: Icons
+- **Framer Motion**: Animations
 
-## 🚀 Installation
+---
 
-### 1. Clone the Repository
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.8+
+- Node.js 18+
+- Groq API key ([get one here](https://groq.com))
+
+### 1. Clone and Setup
 
 ```bash
-git clone <repository-url>
-cd credit-scoring-rag
+cd /Users/abdulmunimjundurahman/Class/Credit-Score-RAG
 ```
 
-### 2. Create Virtual Environment
+### 2. Backend Setup
 
 ```bash
-# Using venv
-python -m venv venv
-
-# Activate virtual environment
-# On macOS/Linux:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
+# Install backend dependencies
+cd backend
 pip install -r requirements.txt
-```
 
-### 4. Set Up Environment Variables
+# Set up environment variables
+cp ../.env.example ../.env
+# Edit .env and add your GROQ_API_KEY
 
-```bash
-# Copy the example environment file
-cp .env.example .env
-
-# Edit .env and add your Groq API key
-nano .env  # or use your preferred editor
-```
-
-## ⚙️ Configuration
-
-Edit the `.env` file to customize system behavior:
-
-```bash
-# Groq API Configuration
-GROQ_API_KEY=your_api_key_here
-GROQ_MODEL=llama-3.1-70b-versatile
-
-# Embedding Model
-EMBEDDING_MODEL=all-MiniLM-L6-v2
-
-# RAG Configuration
-CHUNK_SIZE=1000              # Characters per chunk
-CHUNK_OVERLAP=200            # Overlap between chunks
-TOP_K_RETRIEVAL=5            # Number of chunks to retrieve
-SIMILARITY_THRESHOLD=0.7     # Minimum similarity score
-
-# ChromaDB Configuration
-CHROMA_PERSIST_DIR=./chroma_db
-```
-
-### Configuration Parameters
-
-| Parameter | Description | Default | Recommended Range |
-|-----------|-------------|---------|-------------------|
-| `CHUNK_SIZE` | Size of text chunks | 1000 | 500-2000 |
-| `CHUNK_OVERLAP` | Overlap between chunks | 200 | 100-300 |
-| `TOP_K_RETRIEVAL` | Number of chunks retrieved | 5 | 3-10 |
-| `SIMILARITY_THRESHOLD` | Minimum relevance score | 0.7 | 0.6-0.85 |
-
-## 💻 Usage
-
-### Initial Setup: Ingest Documents
-
-Before using the system, you need to process and index the policy documents:
-
-```bash
+# Ingest documents (first time only)
+cd ..
 python src/ingest_documents.py
+
+# Start backend server
+cd backend
+python -m uvicorn main:app --reload --port 8000
 ```
 
-This will:
-- Load all markdown files from `data/raw/`
-- Split documents into chunks
-- Generate embeddings
-- Store in ChromaDB vector database
+Backend will be available at: **http://localhost:8000**  
+API docs: **http://localhost:8000/docs**
 
-**Expected Output:**
-```
-Processing documents...
-✓ Loaded: credit_scoring_manual.md (195 lines)
-✓ Loaded: risk_assessment_guidelines.md (404 lines)
-✓ Loaded: underwriting_policies.md (494 lines)
-
-Creating embeddings...
-✓ Generated 127 chunks
-✓ Indexed in ChromaDB
-
-Ingestion complete!
-```
-
-### Run the Streamlit Application
+### 3. Frontend Setup
 
 ```bash
-streamlit run src/app.py
+# In a new terminal
+cd /Users/abdulmunimjundurahman/Class/Credit-Score-RAG/frontend
+
+# Install dependencies (already done)
+npm install
+
+# Start frontend
+npm run dev
 ```
 
-The application will open in your browser at `http://localhost:8501`.
+Frontend will be available at: **http://localhost:5173**
 
-### Uploading New Documents
+---
 
-In addition to static ingestion via `ingest_documents.py`, you can:
-1.  **Open the sidebar** in the Streamlit app.
-2.  **Upload PDF or Markdown files** in the "Add Documents" section.
-3.  Click **🚀 Ingest Uploaded Files** to index them immediately without restarting the app.
+## 📱 Platform Features
 
-### Example Queries
+### 1. **Query Interface** 📝
+- Ask natural language questions about credit policies
+- Get answers with source citations
+- Confidence scoring
+- Feedback collection
+- Query history
 
-Try these queries to test the system:
+### 2. **Document Management** 📄
+- Upload PDF, Markdown, and text documents
+- Automatic chunking and indexing
+- View document statistics
+- Delete documents
 
-**Credit Scores:**
-- "What is the minimum credit score for FHA loans?"
-- "What are the credit score requirements for jumbo loans?"
+### 3. **Evaluation Dashboard** 📊
+- Run comprehensive evaluations
+- Track metrics:
+  - Answer accuracy
+  - Source accuracy
+  - Hallucination rate
+  - Citation coverage
+  - Response time
+- View evaluation history
+- Visualize metrics with charts
 
-**DTI Ratios:**
-- "What is the maximum DTI ratio for conventional mortgages?"
-- "What compensating factors allow higher DTI ratios?"
+### 4. **Experiments Panel** 🧪
+- Run ablation studies:
+  - Chunk size optimization
+  - Top-K retrieval tuning
+- Compare configurations
+- Find optimal parameters
 
-**Documentation:**
-- "What income documentation is required for self-employed borrowers?"
-- "What are the reserve requirements for investment properties?"
+### 5. **Settings** ⚙️
+- Dark/Light theme toggle
+- System configuration
 
-**Underwriting:**
-- "What are the waiting periods after bankruptcy?"
-- "What is the maximum LTV for primary residence with a 650 credit score?"
+---
 
-### Programmatic Usage
+## 🔬 Evaluation & Experiments
 
-```python
-from src.rag_pipeline import RAGPipeline
+### Running an Evaluation
 
-# Initialize the RAG system
-rag = RAGPipeline()
+1. Go to the **Evaluation** page
+2. Click **"Run Evaluation"**
+3. View results with detailed metrics
+4. Check evaluation history
 
-# Ask a question
-response = rag.query("What is the minimum credit score for FHA loans?")
+### Running Experiments
 
-# Access the answer
-print(response['answer'])
+1. Go to the **Experiments** page
+2. Choose an ablation study:
+   - **Chunk Size**: Tests 500, 1000, 2000 characters
+   - **Top-K**: Tests 3, 5, 7, 10 retrieval counts
+3. Click **"Run Experiment"**
+4. View best configuration and comparison
 
-# View sources
-for source in response['sources']:
-    print(f"Source: {source['document']} (Score: {source['similarity']:.2f})")
-    print(f"Content: {source['text']}\n")
+---
+
+## 📖 API Documentation
+
+### Query API
+
+```typescript
+POST /api/query
+{
+  "question": "What is the minimum credit score for FHA loans?",
+  "top_k": 5,
+  "use_reranking": true
+}
 ```
 
-## 📚 Data Sources
+### Documents API
 
-The system uses three comprehensive policy documents:
+```typescript
+POST /api/documents/upload  // Upload file
+GET  /api/documents          // List all documents
+GET  /api/documents/stats    // Get statistics
+DELETE /api/documents/{id}   // Delete document
+```
 
-### 1. Credit Scoring Manual
-- Credit score ranges and risk categories
-- Minimum score requirements by product
-- Interest rate tiers
-- Credit history requirements
-- Payment history standards
+### Evaluation API
 
-### 2. Risk Assessment Guidelines
-- Debt-to-Income (DTI) ratio standards
-- Loan-to-Value (LTV) requirements
-- Industry risk classifications
-- Income verification standards
-- Liquid reserves requirements
-- Geographic risk factors
+```typescript
+POST /api/evaluation/run     // Run evaluation
+GET  /api/evaluation/results // List results
+GET  /api/evaluation/metrics/latest // Latest metrics
+```
 
-### 3. Underwriting Policies
-- Documentation requirements (credit, income, assets)
-- Property documentation standards
-- Loan structure requirements
-- Automated underwriting systems
-- Special program guidelines
-- Conditional approval standards
+### Experiments API
 
-**Location**: `data/raw/*.md`
+```typescript
+POST /api/experiments/run                    // Run experiment
+POST /api/experiments/ablation/chunk-size    // Chunk size ablation
+POST /api/experiments/ablation/top-k         // Top-K ablation
+GET  /api/experiments/compare                // Compare experiments
+```
 
-### Adding New Documents
+---
 
-1. Place markdown files in `data/raw/`
-2. Run the ingestion script:
-   ```bash
-   python src/ingest_documents.py
-   ```
+## 📂 Project Structure
+
+```
+Credit-Score-RAG/
+├── backend/                   # FastAPI backend
+│   ├── main.py                # Application entry
+│   ├── routes/                # API routes
+│   │   ├── query.py
+│   │   ├── documents.py
+│   │   ├── evaluation.py
+│   │   └── experiments.py
+│   ├── models/                # Pydantic models
+│   └── requirements.txt
+│
+├── frontend/                  # React frontend
+│   ├── src/
+│   │   ├── components/        # UI components
+│   │   ├── pages/             # Page components
+│   │   ├── services/          # API client
+│   │   ├── store/             # State management
+│   │   └── App.tsx
+│   └── package.json
+│
+├── src/                       # Core RAG logic
+│   ├── rag_pipeline.py
+│   ├── vector_store.py
+│   ├── retriever.py
+│   ├── llm_handler.py
+│   ├── document_processor.py
+│   ├── evaluator.py
+│   └── config.py
+│
+├── data/
+│   ├── raw/                   # Source documents
+│   └── evaluation/            # Test sets & results
+│
+└── experiments/               # Experiment results
+```
+
+---
+
+## 🎨 UI/UX Features
+
+- **Modern Design**: Clean, professional interface
+- **Dark Mode**: Eye-friendly theme
+- **Responsive**: Works on all screen sizes
+- **Animations**: Smooth transitions and micro-interactions
+- **Glass morphism**: Premium visual effects
+- **Real-time Feedback**: Instant visual feedback
+- **Charts & Visualizations**: Interactive data displays
+
+---
 
 ## 🧪 Testing
 
-### Run All Tests
-
+### Backend Tests
 ```bash
-# Run all tests with verbose output
-python -m pytest tests/ -v
-
-# Run with coverage report
-python -m pytest tests/ --cov=src --cov-report=html
-
-# View coverage report
-open htmlcov/index.html
+cd /Users/abdulmunimjundurahman/Class/Credit-Score-RAG
+pytest tests/ -v
 ```
 
-### Run Specific Test Suites
-
+### Frontend Build
 ```bash
-# Test document processing
-python -m pytest tests/test_document_processor.py -v
-
-# Test retrieval system
-python -m pytest tests/test_retriever.py -v
-
-# Test end-to-end RAG pipeline
-python -m pytest tests/test_rag_pipeline.py -v
+cd frontend
+npm run build
 ```
 
-### Evaluation Metrics
+---
 
-Run the evaluation suite to measure system performance:
+## 📊 Metrics & Success Criteria
 
-```bash
-python src/evaluator.py
-```
-
-**Metrics:**
-- **Answer Accuracy**: Percentage of correct answers
-- **Source Attribution**: Percentage of answers with valid citations
-- **Hallucination Rate**: Percentage of unsupported claims
-- **Retrieval Precision**: Relevance of retrieved chunks
-- **Response Time**: Average query processing time
-
-**Target Metrics:**
-- Answer Accuracy: > 90%
-- Source Attribution: > 95%
-- Hallucination Rate: < 5%
-- Average Response Time: < 3 seconds
-
-## 📁 Project Structure
-
-```
-credit-scoring-rag/
-│
-├── data/
-│   ├── raw/                          # Source policy documents
-│   │   ├── credit_scoring_manual.md
-│   │   ├── risk_assessment_guidelines.md
-│   │   └── underwriting_policies.md
-│   └── processed/                    # (Future) Processed data
-│
-├── src/
-│   ├── __init__.py                   # Package initialization
-│   ├── config.py                     # Configuration management
-│   ├── document_processor.py         # Document loading and chunking
-│   ├── vector_store.py               # ChromaDB management
-│   ├── retriever.py                  # Semantic search
-│   ├── llm_handler.py                # Groq API integration
-│   ├── rag_pipeline.py               # Main RAG orchestration
-│   ├── evaluator.py                  # Evaluation metrics
-│   ├── ingest_documents.py           # Document ingestion script
-│   └── app.py                        # Streamlit application
-│
-├── tests/
-│   ├── test_document_processor.py
-│   ├── test_retriever.py
-│   ├── test_rag_pipeline.py
-│   └── test_data.py
-│
-├── chroma_db/                        # Vector database (generated)
-├── .env                              # Environment variables (create from .env.example)
-├── .env.example                      # Example environment configuration
-├── .gitignore                        # Git ignore rules
-├── requirements.txt                  # Python dependencies
-└── README.md                         # This file
-```
-
-## 📖 API Reference
-
-### RAGPipeline
-
-Main class for interacting with the RAG system.
-
-```python
-class RAGPipeline:
-    def __init__(self, config_path: str = None)
-    def query(self, question: str, top_k: int = 5) -> dict
-    def reload_documents(self) -> None
-```
-
-**Methods:**
-
-- `query(question, top_k)`: Process a user query and return answer with sources
-  - **Parameters:**
-    - `question` (str): The user's question
-    - `top_k` (int): Number of context chunks to retrieve
-  - **Returns:** Dictionary with `answer`, `sources`, `confidence`
-
-- `reload_documents()`: Refresh the vector database with latest documents
-
-### VectorStore
-
-Manages the ChromaDB vector database.
-
-```python
-class VectorStore:
-    def __init__(self, persist_directory: str, embedding_model: str)
-    def add_documents(self, documents: List[str], metadatas: List[dict]) -> None
-    def similarity_search(self, query: str, k: int, threshold: float) -> List[dict]
-```
-
-### DocumentProcessor
-
-Handles document loading and chunking.
-
-```python
-class DocumentProcessor:
-    def __init__(self, chunk_size: int, chunk_overlap: int)
-    def load_documents(self, directory: str) -> List[Document]
-    def split_documents(self, documents: List[Document]) -> List[Document]
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Issue: "ModuleNotFoundError: No module named 'src'"**
-- **Solution**: Ensure you're running commands from the project root directory and the virtual environment is activated.
-
-**Issue: "Groq API authentication failed"**
-- **Solution**: Verify your `GROQ_API_KEY` in the `.env` file is correct.
-
-**Issue: "ChromaDB database not found"**
-- **Solution**: Run the ingestion script: `python src/ingest_documents.py`
-
-**Issue: "Low-quality or hallucinated answers"**
-- **Solutions**:
-  - Increase `SIMILARITY_THRESHOLD` (e.g., 0.75 or 0.8)
-  - Increase `TOP_K_RETRIEVAL` to get more context
-  - Reduce `CHUNK_SIZE` for more granular retrieval
-
-**Issue: "Slow query response time"**
-- **Solutions**:
-  - Reduce `TOP_K_RETRIEVAL` if too many chunks are retrieved
-  - Consider using a faster embedding model
-  - Check network latency to Groq API
-
-### Debug Mode
-
-Enable debug logging to see detailed information:
-
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-
-from src.rag_pipeline import RAGPipeline
-rag = RAGPipeline()
-response = rag.query("your question")
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. **Fork** the repository
-2. **Create a branch** for your feature (`git checkout -b feature/amazing-feature`)
-3. **Write tests** for new functionality
-4. **Ensure all tests pass** (`pytest tests/`)
-5. **Commit your changes** (`git commit -m 'Add amazing feature'`)
-6. **Push to the branch** (`git push origin feature/amazing-feature`)
-7. **Open a Pull Request**
-
-## 📄 License
-
-This project is intended for internal use only. All policy documents are confidential and proprietary.
+Target Metrics (from PRD):
+- ✅ **Answer Accuracy**: ≥ 95%
+- ✅ **Hallucination Rate**: ≤ 2%
+- ✅ **Citation Coverage**: ≥ 98%
+- ✅ **Response Time**: < 10 seconds
 
 ---
 
 ## 🔮 Future Enhancements
 
-- [x] PDF Document Support
-- [x] Dynamic File Upload via UI
 - [ ] Multi-language support
-- [ ] Advanced reranking models (e.g., Cross-Encoder)
-- [ ] Query history and analytics dashboard
-- [ ] Fine-tuned embedding models on domain-specific data
-- [ ] Integration with external policy management systems
-- [ ] REST API for programmatic access
-- [ ] Automated policy update notifications
+- [ ] Advanced reranking (cross-encoder)
+- [ ] Fine-tuned embeddings
+- [ ] User authentication
+- [ ] REST API rate limiting
+- [ ] Automated testing pipeline
+- [ ] Docker deployment
+- [ ] Cloud deployment (AWS/GCP)
 
 ---
 
-**Version**: 1.0.0  
+## 📝 License
+
+Internal use only - AI Course Term Project
+
+---
+
+## 👥 Authors
+
+- AI Course Project Team
+- Built with ❤️ using modern RAG technology
+
+---
+
+## 📞 Support
+
+For issues or questions:
+1. Check the API documentation at `/docs`
+2. Review the implementation plan in `brain/` folder
+3. Check browser console for frontend errors
+4. Check backend logs for API errors
+
+---
+
+**Version**: 2.0.0  
 **Last Updated**: January 2026  
-**Contact**: [Your Team/Department]
+**Status**: ✅ Production Ready

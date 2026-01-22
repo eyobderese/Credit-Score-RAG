@@ -1,0 +1,30 @@
+{
+  "id": "c8144651",
+  "config": {
+    "name": "chunk_size_1000",
+    "description": "Testing chunk size = 1000",
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "top_k": 5,
+    "similarity_threshold": 0.7,
+    "embedding_model": "all-MiniLM-L6-v2",
+    "llm_model": "llama-3.1-70b-versatile",
+    "temperature": 0.1,
+    "use_reranking": true,
+    "use_hybrid_search": false
+  },
+  "metrics": {
+    "answer_accuracy": 1.0,
+    "source_accuracy": 1.0,
+    "hallucination_rate": 0.0,
+    "citation_coverage": 1.0,
+    "precision_at_k": 1.0,
+    "recall_at_k": 1.0,
+    "mrr": 0.0,
+    "avg_response_time_ms": 784.2508951822916,
+    "avg_confidence": 52.333333333333336,
+    "avg_bert_score": null
+  },
+  "run_at": "2026-01-22T20:10:25.389726",
+  "duration_seconds": 2.354228973388672
+}
