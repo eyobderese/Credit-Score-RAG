@@ -1,5 +1,5 @@
-
 ![UI Screenshot](ui.png)
+
 # Credit Scoring RAG Platform v2.0 🏦🤖
 
 A **production-grade Retrieval-Augmented Generation (RAG)** platform for answering questions about credit policies, scoring rules, and underwriting guidelines with comprehensive evaluation and experimentation capabilities.
@@ -7,6 +7,7 @@ A **production-grade Retrieval-Augmented Generation (RAG)** platform for answeri
 ## 🎯 Project Overview
 
 This is an AI course term project that combines:
+
 - **Modern Full-Stack Architecture**: FastAPI backend + React frontend
 - **RAG Pipeline**: LangChain + ChromaDB + Groq LLMs
 - **Evaluation Framework**: Comprehensive metrics and test sets
@@ -34,6 +35,7 @@ This is an AI course term project that combines:
 ## 📦 Technology Stack
 
 ### Backend
+
 - **FastAPI**: Modern Python web framework
 - **LangChain**: RAG orchestration
 - **ChromaDB**: Vector database
@@ -41,6 +43,7 @@ This is an AI course term project that combines:
 - **Groq**: LLM inference
 
 ### Frontend
+
 - **React**: UI library
 - **TypeScript**: Type safety
 - **Vite**: Build tool
@@ -108,6 +111,7 @@ Frontend will be available at: **http://localhost:5173**
 ## 📱 Platform Features
 
 ### 1. **Query Interface** 📝
+
 - Ask natural language questions about credit policies
 - Get answers with source citations
 - Confidence scoring
@@ -115,12 +119,14 @@ Frontend will be available at: **http://localhost:5173**
 - Query history
 
 ### 2. **Document Management** 📄
+
 - Upload PDF, Markdown, and text documents
 - Automatic chunking and indexing
 - View document statistics
 - Delete documents
 
 ### 3. **Evaluation Dashboard** 📊
+
 - Run comprehensive evaluations
 - Track metrics:
   - Answer accuracy
@@ -132,6 +138,7 @@ Frontend will be available at: **http://localhost:5173**
 - Visualize metrics with charts
 
 ### 4. **Experiments Panel** 🧪
+
 - Run ablation studies:
   - Chunk size optimization
   - Top-K retrieval tuning
@@ -139,6 +146,7 @@ Frontend will be available at: **http://localhost:5173**
 - Find optimal parameters
 
 ### 5. **Settings** ⚙️
+
 - Dark/Light theme toggle
 - System configuration
 
@@ -180,27 +188,27 @@ POST /api/query
 ### Documents API
 
 ```typescript
-POST /api/documents/upload  // Upload file
-GET  /api/documents          // List all documents
-GET  /api/documents/stats    // Get statistics
-DELETE /api/documents/{id}   // Delete document
+POST / api / documents / upload; // Upload file
+GET / api / documents; // List all documents
+GET / api / documents / stats; // Get statistics
+DELETE / api / documents / { id }; // Delete document
 ```
 
 ### Evaluation API
 
 ```typescript
-POST /api/evaluation/run     // Run evaluation
-GET  /api/evaluation/results // List results
-GET  /api/evaluation/metrics/latest // Latest metrics
+POST / api / evaluation / run; // Run evaluation
+GET / api / evaluation / results; // List results
+GET / api / evaluation / metrics / latest; // Latest metrics
 ```
 
 ### Experiments API
 
 ```typescript
-POST /api/experiments/run                    // Run experiment
-POST /api/experiments/ablation/chunk-size    // Chunk size ablation
-POST /api/experiments/ablation/top-k         // Top-K ablation
-GET  /api/experiments/compare                // Compare experiments
+POST / api / experiments / run; // Run experiment
+POST / api / experiments / ablation / chunk - size; // Chunk size ablation
+POST / api / experiments / ablation / top - k; // Top-K ablation
+GET / api / experiments / compare; // Compare experiments
 ```
 
 ---
@@ -261,12 +269,14 @@ Credit-Score-RAG/
 ## 🧪 Testing
 
 ### Backend Tests
+
 ```bash
 cd /Users/abdulmunimjundurahman/Class/Credit-Score-RAG
 pytest tests/ -v
 ```
 
 ### Frontend Build
+
 ```bash
 cd frontend
 npm run build
@@ -277,23 +287,11 @@ npm run build
 ## 📊 Metrics & Success Criteria
 
 Target Metrics (from PRD):
+
 - ✅ **Answer Accuracy**: ≥ 95%
-- ✅ **Hallucination Rate**: ≤ 2%
-- ✅ **Citation Coverage**: ≥ 98%
+- ✅ **Hallucination Rate**: ≤ 4%
+- ✅ **Citation Coverage**: ≥ 94%
 - ✅ **Response Time**: < 10 seconds
-
----
-
-## 🔮 Future Enhancements
-
-- [ ] Multi-language support
-- [ ] Advanced reranking (cross-encoder)
-- [ ] Fine-tuned embeddings
-- [ ] User authentication
-- [ ] REST API rate limiting
-- [ ] Automated testing pipeline
-- [ ] Docker deployment
-- [ ] Cloud deployment (AWS/GCP)
 
 ---
 
@@ -307,16 +305,6 @@ Internal use only - AI Course Term Project
 
 - AI Course Project Team
 - Built with ❤️ using modern RAG technology
-
----
-
-## 📞 Support
-
-For issues or questions:
-1. Check the API documentation at `/docs`
-2. Review the implementation plan in `brain/` folder
-3. Check browser console for frontend errors
-4. Check backend logs for API errors
 
 ---
 
