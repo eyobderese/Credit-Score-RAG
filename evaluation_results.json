@@ -1,0 +1,280 @@
+{
+  "metrics": {
+    "total_tests": 5,
+    "successful": 5,
+    "failed": 0,
+    "success_rate": 1.0,
+    "avg_confidence": 100.0,
+    "avg_response_time": 4.003683996200562,
+    "avg_sources_retrieved": 5.0,
+    "high_confidence_rate": 1.0,
+    "avg_retrieval_time": 0.1588076114654541,
+    "avg_generation_time": 3.844546890258789,
+    "avg_precision_at_1": 1.0,
+    "avg_precision_at_3": 0.9333333333333333,
+    "avg_precision_at_5": 0.8,
+    "avg_recall_at_5": 3.5,
+    "avg_mrr": 1.0,
+    "avg_ndcg_at_5": 2.2671374846109718,
+    "avg_faithfulness_confidence": 100.0,
+    "faithfulness_grounded_rate": 1.0
+  },
+  "results": [
+    {
+      "question": "What is the minimum credit score for FHA loans?",
+      "answer": "The minimum credit score for FHA loans is 580 (with a 3.5% down payment) or 500 (with a 10% down payment). \n(Source: credit_scoring_manual.md - Section: 1.2 Minimum Credit Score Requirements by Product)",
+      "confidence": 100,
+      "retrieved_count": 5,
+      "response_time": 1.8320069313049316,
+      "retrieval_time": 0.32418394088745117,
+      "generation_time": 1.5075469017028809,
+      "sources": [
+        "credit_scoring_manual.md",
+        "credit_scoring_manual.md",
+        "credit_scoring_manual.md",
+        "risk_assessment_guidelines.md",
+        "credit_scoring_manual.md"
+      ],
+      "validation": {
+        "grounded": true,
+        "confidence": 100,
+        "validation_response": "```json\n{\n  \"grounded\": \"Yes\",\n  \"confidence\": \"100\",\n  \"issues\": []\n}\n```"
+      },
+      "success": true,
+      "expected_present": true,
+      "precision_at_1": 1.0,
+      "precision_at_3": 1.0,
+      "precision_at_5": 0.8,
+      "recall_at_5": 4.0,
+      "mrr": 1.0,
+      "ndcg_at_5": 2.5177825608059994,
+      "source_recall": 4.0,
+      "faithfulness_grounded": true,
+      "faithfulness_confidence": 100,
+      "answer_relevancy_score": null,
+      "answer_relevancy_response": "```\n{\n  \"score\": 100,\n  \"rationale\": \"The answer directly addresses the question by providing the minimum credit score for FHA loans.\"\n}\n```"
+    },
+    {
+      "question": "What are the DTI limits for conventional mortgages?",
+      "answer": "The DTI limits for conventional mortgages are: \n- Front-End DTI: Maximum 28%\n- Back-End DTI: Maximum 36%\n- Exception approval: Up to 43% with compensating factors.\n\nAdditionally, compensating factors such as credit score \u2265740, cash reserves \u226512 months, minimal increase in housing payment, or significant non-taxable income may allow for a DTI up to 10% above the standard limits.\n\n(Source: risk_assessment_guidelines.md - Section: 1.2 Maximum DTI Ratios by Product, risk_assessment_guidelines.md - Section: 1.3 DTI Compensating Factors)",
+      "confidence": 100,
+      "retrieved_count": 5,
+      "response_time": 1.5510222911834717,
+      "retrieval_time": 0.07962298393249512,
+      "generation_time": 1.470993995666504,
+      "sources": [
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md",
+        "underwriting_policies.md"
+      ],
+      "validation": {
+        "grounded": true,
+        "confidence": 100,
+        "validation_response": "```json\n{\n  \"grounded\": \"Yes\",\n  \"confidence\": \"100\",\n  \"issues\": []\n}\n```"
+      },
+      "success": true,
+      "expected_present": true,
+      "precision_at_1": 1.0,
+      "precision_at_3": 1.0,
+      "precision_at_5": 0.8,
+      "recall_at_5": 4.0,
+      "mrr": 1.0,
+      "ndcg_at_5": 2.5616063116448506,
+      "source_recall": 4.0,
+      "faithfulness_grounded": true,
+      "faithfulness_confidence": 100,
+      "answer_relevancy_score": null,
+      "answer_relevancy_response": "```\n{\n  \"score\": 100,\n  \"rationale\": \"The answer directly addresses the question by providing the DTI limits for conventional mortgages.\"\n}\n```"
+    },
+    {
+      "question": "What documentation is required for self-employed borrowers?",
+      "answer": "For self-employed borrowers, the required documentation includes: \n- Personal tax returns (2 years) with all schedules\n- Business tax returns (2 years) if applicable\n- Year-to-date profit & loss statement\n- Business license (if applicable)\n- CPA letter for loans >$250K\n\nAdditionally, the following documentation is also specified: \n- Personal 1040 returns (2 years) with all schedules\n- Business returns (2 years): 1120, 1120S, 1065, Schedule C\n- Year-to-date P&L (signed by applicant)\n- CPA letter for loans >$250K\n- Business license/DBA registration\n\n(Source: risk_assessment_guidelines.md - Section: 4.2 Self-Employed Borrowers, underwriting_policies.md - Section: 1.3 Income Documentation by Source)",
+      "confidence": 100,
+      "retrieved_count": 5,
+      "response_time": 1.4827728271484375,
+      "retrieval_time": 0.0433049201965332,
+      "generation_time": 1.4392168521881104,
+      "sources": [
+        "risk_assessment_guidelines.md",
+        "underwriting_policies.md",
+        "underwriting_policies.md",
+        "underwriting_policies.md",
+        "underwriting_policies.md"
+      ],
+      "validation": {
+        "grounded": true,
+        "confidence": 100,
+        "validation_response": "```json\n{\n  \"grounded\": \"Yes\",\n  \"confidence\": \"100\",\n  \"issues\": []\n}\n```"
+      },
+      "success": true,
+      "expected_present": true,
+      "precision_at_1": 1.0,
+      "precision_at_3": 1.0,
+      "precision_at_5": 1.0,
+      "recall_at_5": 2.5,
+      "mrr": 1.0,
+      "ndcg_at_5": 1.8078394317246163,
+      "source_recall": 2.5,
+      "faithfulness_grounded": true,
+      "faithfulness_confidence": 100,
+      "answer_relevancy_score": null,
+      "answer_relevancy_response": "```json\n{\n  \"score\": 100,\n  \"rationale\": \"The answer directly addresses the question by providing a list of required documentation for self-employed borrowers.\"\n}\n```"
+    },
+    {
+      "question": "What are the reserve requirements for investment properties?",
+      "answer": "The reserve requirements for investment properties are as follows: \n- 1 property: 6 months\n- 2 properties: 9 months\n- 3+ properties: 12 months\nAdditionally, properties located in disaster-prone areas may require additional reserves, such as +1 month for properties in FEMA Flood Zones and +2 months for properties in Hurricane-Prone Coastal Areas.\n(Source: risk_assessment_guidelines.md - Section: 5.2 Minimum Reserves by Property Type, Section: 6.2 Disaster-Prone Areas)",
+      "confidence": 100,
+      "retrieved_count": 5,
+      "response_time": 1.3672950267791748,
+      "retrieval_time": 0.30116891860961914,
+      "generation_time": 1.0658948421478271,
+      "sources": [
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md"
+      ],
+      "validation": {
+        "grounded": true,
+        "confidence": 100,
+        "validation_response": "```json\n{\n  \"grounded\": \"Yes\",\n  \"confidence\": \"100\",\n  \"issues\": []\n}\n```"
+      },
+      "success": true,
+      "expected_present": true,
+      "precision_at_1": 1.0,
+      "precision_at_3": 1.0,
+      "precision_at_5": 1.0,
+      "recall_at_5": 5.0,
+      "mrr": 1.0,
+      "ndcg_at_5": 2.9484591188793923,
+      "source_recall": 5.0,
+      "faithfulness_grounded": true,
+      "faithfulness_confidence": 100,
+      "answer_relevancy_score": null,
+      "answer_relevancy_response": "```\n{\n  \"score\": 100,\n  \"rationale\": \"The answer directly addresses the question by providing specific reserve requirements for investment properties.\"\n}\n```"
+    },
+    {
+      "question": "What is the maximum LTV for jumbo loans?",
+      "answer": "The maximum LTV for jumbo loans is not explicitly stated in the provided policy documents. \n\n(Source: risk_assessment_guidelines.md - 2.1 Loan-to-Value (LTV) Ratios, underwriting_policies.md - 3.2 Loan Amount Limits, credit_scoring_manual.md - 1.2 Minimum Credit Score Requirements by Product)",
+      "confidence": 100,
+      "retrieved_count": 5,
+      "response_time": 13.785322904586792,
+      "retrieval_time": 0.045757293701171875,
+      "generation_time": 13.739081859588623,
+      "sources": [
+        "risk_assessment_guidelines.md",
+        "credit_scoring_manual.md",
+        "risk_assessment_guidelines.md",
+        "underwriting_policies.md",
+        "underwriting_policies.md"
+      ],
+      "validation": {
+        "grounded": true,
+        "confidence": 100,
+        "validation_response": "```json\n{\n  \"grounded\": \"Yes\",\n  \"confidence\": \"100\",\n  \"issues\": []\n}\n```"
+      },
+      "success": true,
+      "expected_present": true,
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.6666666666666666,
+      "precision_at_5": 0.4,
+      "recall_at_5": 2.0,
+      "mrr": 1.0,
+      "ndcg_at_5": 1.5,
+      "source_recall": 2.0,
+      "faithfulness_grounded": true,
+      "faithfulness_confidence": 100,
+      "answer_relevancy_score": null,
+      "answer_relevancy_response": "```\n{\n  \"score\": 80,\n  \"rationale\": \"The answer directly addresses the question about maximum LTV for jumbo loans, but does not provide a specific value, instead stating it's not explicitly stated in the provided documents.\"\n}\n```"
+    }
+  ],
+  "coverage": {
+    "raw_markdown_files": 3,
+    "vector_total_documents": 46,
+    "processed_chunks": 46,
+    "vector_collection": "credit_policies",
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "unlabeled": {
+    "probes": [
+      {
+        "question": "What is the minimum credit score for FHA loans?",
+        "type": "normal",
+        "retrieved_count": 5,
+        "top_similarity": 0.7421537637710571,
+        "avg_similarity": 0.6185181140899658,
+        "grounded": true,
+        "faithfulness_confidence": 100,
+        "numeric_fidelity": 1.0,
+        "refusal": false
+      },
+      {
+        "question": "DTI limits for conventional mortgages?",
+        "type": "normal",
+        "retrieved_count": 5,
+        "top_similarity": 0.7703585624694824,
+        "avg_similarity": 0.6001275062561036,
+        "grounded": true,
+        "faithfulness_confidence": 100,
+        "numeric_fidelity": 1.0,
+        "refusal": false
+      },
+      {
+        "question": "Max LTV for investment properties with 700 score?",
+        "type": "normal",
+        "retrieved_count": 5,
+        "top_similarity": 0.6032435894012451,
+        "avg_similarity": 0.5229840874671936,
+        "grounded": true,
+        "faithfulness_confidence": 100,
+        "numeric_fidelity": 1.0,
+        "refusal": false
+      },
+      {
+        "question": "Wait times after bankruptcy?",
+        "type": "normal",
+        "retrieved_count": 5,
+        "top_similarity": 0.522257924079895,
+        "avg_similarity": 0.3598242998123169,
+        "grounded": null,
+        "faithfulness_confidence": 50,
+        "numeric_fidelity": 1.0,
+        "refusal": false
+      },
+      {
+        "question": "What is the capital city of France?",
+        "type": "unanswerable",
+        "retrieved_count": 0,
+        "top_similarity": 0.0,
+        "avg_similarity": 0.0,
+        "grounded": false,
+        "faithfulness_confidence": 0,
+        "numeric_fidelity": null,
+        "refusal": true
+      },
+      {
+        "question": "Who won the NBA finals?",
+        "type": "unanswerable",
+        "retrieved_count": 0,
+        "top_similarity": 0.0,
+        "avg_similarity": 0.0,
+        "grounded": false,
+        "faithfulness_confidence": 0,
+        "numeric_fidelity": null,
+        "refusal": true
+      }
+    ],
+    "summary": {
+      "hit_rate": 0.6666666666666666,
+      "grounded_rate": 0.6,
+      "avg_faithfulness_confidence": 60.0,
+      "avg_top_similarity": 0.4396689732869466,
+      "avg_similarity": 0.3502423346042633,
+      "avg_numeric_fidelity": 1.0,
+      "refusal_rate_unanswerable": 1.0
+    }
+  }
+}
