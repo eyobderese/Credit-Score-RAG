@@ -445,27 +445,33 @@ class RAGEvaluator:
         if llm is None:
             return {"answer_relevancy_score": None, "answer_relevancy_response": "LLM handler unavailable"}
 
-        prompt = f"""Assess how directly the ANSWER addresses the QUESTION. Focus on relevance, not factuality.
+        prompt = f"""You are a strict relevance grader.
+
+Return ONLY compact JSON. No prose. Schema: {{"score": <0-100 integer>, "rationale": "<short>"}}
 
 QUESTION: {question}
 ANSWER: {answer}
-
-Respond as JSON with keys: score (0-100, higher = more relevant), rationale (short).
 """
         try:
             response = llm.client.chat.completions.create(
                 model=llm.model,
                 messages=[
-                    {"role": "system", "content": "You are a strict relevance grader."},
+                    {"role": "system", "content": "You output only JSON for relevance grading."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.0,
                 max_tokens=200
             )
             raw = response.choices[0].message.content
-            import re
-            score_match = re.search(r"score['\s:]+(\d{1,3})", raw, re.IGNORECASE)
-            score = int(score_match.group(1)) if score_match else None
+            try:
+                parsed = json.loads(raw)
+                score = parsed.get("score") if isinstance(parsed, dict) else None
+            except Exception:
+                import re
+                score_match = re.search(r"score['\s:]+(\d{1,3})", raw, re.IGNORECASE)
+                score = int(score_match.group(1)) if score_match else None
+            if score is None:
+                logger.warning(f"Relevancy judge returned unparsable response: {raw}")
             return {
                 "answer_relevancy_score": score,
                 "answer_relevancy_response": raw

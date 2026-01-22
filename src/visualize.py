@@ -40,12 +40,13 @@ ax.set_title("Ranking Metrics")
 
 # Faithfulness and relevancy
 ax = axes[0, 2]
-sns.barplot(ax=ax, x=["Faithfulness", "Relevancy"], y=[
-    summary.get("avg_faithfulness_confidence", 0),
-    summary.get("avg_answer_relevancy", 0)
-])
+faith = summary.get("avg_faithfulness_confidence", 0)
+relevancy = summary.get("avg_answer_relevancy")
+relevancy_val = float("nan") if relevancy is None else relevancy
+sns.barplot(ax=ax, x=["Faithfulness", "Relevancy"], y=[faith, relevancy_val])
 ax.set_ylim(0, 100)
-ax.set_title("LLM Judging Metrics")
+title = "LLM Judging Metrics" if relevancy is not None else "LLM Judging Metrics (Relevancy N/A)"
+ax.set_title(title)
 
 # Confidence vs retrieved count
 ax = axes[1, 0]

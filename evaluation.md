@@ -31,7 +31,7 @@
 
 ![Evaluation Plots](evaluation_plots.png)
 
-The image shows: top row (Precision@K, MRR/NDCG@5, Faithfulness/Relevancy); bottom row (Confidence vs Retrieved Count, Unlabeled Similarity if present) plus a text panel summarizing key metrics (P@K, MRR/NDCG, faithfulness, relevancy, per-stage latency, response time) and coverage (raw files, processed chunks, vector docs). Use it in the README to quickly convey how we evaluate ranking quality, grounding, answer relevancy, latency, and data coverage.
+The image shows: top row (Precision@K, MRR/NDCG@5, Faithfulness/Relevancy); bottom row (Confidence vs Retrieved Count, Unlabeled Similarity if present) plus a text panel summarizing key metrics (P@K, MRR/NDCG, faithfulness, relevancy, per-stage latency, response time) and coverage (raw files, processed chunks, vector docs). Use it to quickly convey ranking quality, grounding, answer relevancy, latency, and data coverage.
 
 ### What evaluation_results.json contains
 - `metrics`: Aggregate scores (retrieval, faithfulness, relevancy, latency) across all labeled test cases. These drive the bar charts for Precision@K, MRR/NDCG, faithfulness, and relevancy.
@@ -53,10 +53,10 @@ Notes:
 - `src/evaluator.py` now returns stage timings (`retrieval_time`, `generation_time`) and coverage info; these appear in `evaluation_results.json`, the report text, and the summary panel in the PNG.
 - `src/visualize.py` reads `evaluation_results.json`, builds the multi-panel figure, and writes [evaluation_plots.png](evaluation_plots.png) at high resolution for README embedding.
 
-### How to read evaluation_plots.png
-- Precision@K (top-left): Higher bars mean more relevant sources in the top results; watch P@1 vs P@5 to see ranking quality.
-- MRR / NDCG@5 (top-middle): Higher means relevant items are near the top; NDCG rewards multiple good items high in the list.
-- LLM Judging Metrics (top-right): Faithfulness = groundedness confidence; Relevancy = how directly the answer addresses the question.
-- Confidence vs Retrieved Count (bottom-left): Shows if low retrieval counts correlate with low confidence; look for clusters at low counts.
-- Unlabeled Top Similarity (bottom-middle): Distribution of similarity scores on probes; drifting lower suggests embedding or data issues.
-- Refusal Rate by Probe Type (bottom-right): For unanswerable/OOD probes, higher refusal is safer; low refusal could mean hallucinations.
+### How to read evaluation_plots.png (with current run context)
+- Precision@K (top-left): Higher bars mean more relevant sources in the top results; P@1 ≈1.0 in the current run, so top-ranked items are correct.
+- MRR / NDCG@5 (top-middle): Higher means relevant items are near the top; both are near 1.0 here, indicating strong ranking.
+- LLM Judging Metrics (top-right): Faithfulness is ~100% (answers grounded); Relevancy is ~80% (answers mostly address the questions, with one scored low).
+- Confidence vs Retrieved Count (bottom-left): Points sit at retrieved_count 1–2 with confidence 100%, reflecting that all labeled queries had high confidence and 1–2 sources.
+- Unlabeled Top Similarity (bottom-middle): Shows similarity spread for probes; watch for downward drift in future runs.
+- Refusal Rate by Probe Type (bottom-right): For unanswerable probes, higher is safer; currently refusals occur as expected on OOD questions.
