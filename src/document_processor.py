@@ -197,6 +197,7 @@ class DocumentProcessor:
             List of chunked Document objects with enhanced metadata
         """
         all_chunks = []
+        global_chunk_count = 0
         
         for doc in documents:
             # Split the document
@@ -208,8 +209,10 @@ class DocumentProcessor:
                 chunk.metadata.update(doc.metadata)
                 
                 # Add chunk information
-                chunk.metadata["chunk_index"] = i
-                chunk.metadata["total_chunks"] = len(chunks)
+                # Use a global index to prevent duplicate IDs across pages in the same session
+                chunk.metadata["chunk_index"] = global_chunk_count
+                chunk.metadata["page_chunk_index"] = i
+                chunk.metadata["total_page_chunks"] = len(chunks)
                 
                 # Extract section heading from chunk if available
                 section = self._extract_section_heading(chunk.page_content)
@@ -217,6 +220,7 @@ class DocumentProcessor:
                     chunk.metadata["section"] = section
                 
                 all_chunks.append(chunk)
+                global_chunk_count += 1
         
         logger.info(f"Split into {len(all_chunks)} chunks")
         return all_chunks
