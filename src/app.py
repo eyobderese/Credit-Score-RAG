@@ -140,6 +140,36 @@ def main():
         
         st.divider()
         
+        # Document Upload
+        st.subheader("📤 Add Documents")
+        uploaded_files = st.file_uploader(
+            "Upload policy files (PDF/MD)", 
+            type=["pdf", "md"], 
+            accept_multiple_files=True
+        )
+        
+        if uploaded_files:
+            if st.button("🚀 Ingest Uploaded Files", use_container_width=True):
+                for uploaded_file in uploaded_files:
+                    with st.spinner(f"Ingesting {uploaded_file.name}..."):
+                        result = rag.ingest_file(uploaded_file)
+                        if result["status"] == "success":
+                            st.success(result["message"])
+                            # Force refresh stats
+                            st.rerun()
+                        else:
+                            st.error(f"Error ingesting {uploaded_file.name}: {result['message']}")
+        
+        st.divider()
+        
+        # Indexed Sources
+        if stats.get('indexed_sources'):
+            st.subheader("📚 Indexed Policies")
+            for source in stats['indexed_sources']:
+                st.caption(f"• {source}")
+        
+        st.divider()
+        
         # Debug mode
         debug_mode = st.checkbox("Debug mode", value=False)
         

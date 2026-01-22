@@ -37,8 +37,9 @@ This Credit Scoring Policy Assistant leverages RAG technology to provide accurat
 
 - **Semantic Search**: Uses advanced embeddings to find relevant policy sections
 - **Intelligent Chunking**: Optimally splits documents to preserve context
-- **Multi-Document Support**: Queries across multiple policy manuals simultaneously
+- **Multi-Format Support**: Handle **Markdown (.md)** and **PDF (.pdf)** documents
 - **Interactive UI**: Clean Streamlit interface for easy interaction
+- **Dynamic Ingestion**: Upload and index new documents directly from the UI
 - **Confidence Scoring**: Provides confidence levels for each answer
 - **Debug Mode**: View retrieved chunks and relevance scores
 - **Evaluation Metrics**: Built-in tools to measure accuracy and quality
@@ -180,7 +181,14 @@ Ingestion complete!
 streamlit run src/app.py
 ```
 
-The application will open in your browser at `http://localhost:8501`
+The application will open in your browser at `http://localhost:8501`.
+
+### Uploading New Documents
+
+In addition to static ingestion via `ingest_documents.py`, you can:
+1.  **Open the sidebar** in the Streamlit app.
+2.  **Upload PDF or Markdown files** in the "Add Documents" section.
+3.  Click **🚀 Ingest Uploaded Files** to index them immediately without restarting the app.
 
 ### Example Queries
 
@@ -449,6 +457,8 @@ This project is intended for internal use only. All policy documents are confide
 
 ## 🔮 Future Enhancements
 
+- [x] PDF Document Support
+- [x] Dynamic File Upload via UI
 - [ ] Multi-language support
 - [ ] Advanced reranking models (e.g., Cross-Encoder)
 - [ ] Query history and analytics dashboard

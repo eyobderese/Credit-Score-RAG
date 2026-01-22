@@ -9,6 +9,9 @@ from pathlib import Path
 from typing import List, Dict, Optional
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
+from langchain_community.document_loaders import PyPDFLoader
+import tempfile
+import os
 import logging
 
 logger = logging.getLogger(__name__)
@@ -45,10 +48,10 @@ class DocumentProcessor:
         
     def load_documents(self, directory: Path) -> List[Document]:
         """
-        Load all markdown documents from a directory.
+        Load all markdown and PDF documents from a directory.
         
         Args:
-            directory: Path to directory containing markdown files
+            directory: Path to directory containing files
             
         Returns:
             List of Document objects with content and metadata
@@ -58,32 +61,92 @@ class DocumentProcessor:
         if not directory.exists():
             raise FileNotFoundError(f"Directory not found: {directory}")
         
-        # Find all markdown files
+        # Find all markdown and PDF files
         md_files = list(directory.glob("*.md"))
+        pdf_files = list(directory.glob("*.pdf"))
         
-        if not md_files:
-            logger.warning(f"No markdown files found in {directory}")
+        all_files = md_files + pdf_files
+        
+        if not all_files:
+            logger.warning(f"No documents found in {directory}")
             return documents
         
-        for file_path in md_files:
-            logger.info(f"Loading: {file_path.name}")
+        for file_path in all_files:
+            try:
+                if file_path.suffix.lower() == '.md':
+                    docs = self._load_markdown(file_path)
+                elif file_path.suffix.lower() == '.pdf':
+                    docs = self._load_pdf(file_path)
+                else:
+                    continue
+                
+                documents.extend(docs)
+            except Exception as e:
+                logger.error(f"Error loading {file_path.name}: {e}")
             
-            # Read file content
-            with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Extract metadata from document
-            metadata = self._extract_metadata(content, file_path)
-            
-            # Create document object
-            doc = Document(
-                page_content=content,
-                metadata=metadata
-            )
-            documents.append(doc)
-            
-        logger.info(f"Loaded {len(documents)} documents")
+        logger.info(f"Loaded {len(documents)} documents (total pages/files)")
         return documents
+
+    def _load_markdown(self, file_path: Path) -> List[Document]:
+        """Load a markdown file."""
+        logger.info(f"Loading Markdown: {file_path.name}")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        metadata = self._extract_metadata(content, file_path)
+        return [Document(page_content=content, metadata=metadata)]
+
+    def _load_pdf(self, file_path: Path) -> List[Document]:
+        """Load a PDF file."""
+        logger.info(f"Loading PDF: {file_path.name}")
+        loader = PyPDFLoader(str(file_path))
+        docs = loader.load()
+        
+        # Enhance metadata for each page
+        for doc in docs:
+            doc.metadata.update({
+                "source": file_path.name,
+                "file_path": str(file_path),
+                "type": "pdf"
+            })
+        return docs
+
+    def process_uploaded_file(self, uploaded_file) -> List[Document]:
+        """
+        Process a file uploaded through Streamlit.
+        
+        Args:
+            uploaded_file: Streamlit UploadedFile object
+            
+        Returns:
+            List of processed document chunks
+        """
+        file_name = uploaded_file.name
+        logger.info(f"Processing uploaded file: {file_name}")
+        
+        # Create a temporary file to process
+        with tempfile.NamedTemporaryFile(delete=False, suffix=Path(file_name).suffix) as tmp:
+            tmp.write(uploaded_file.getvalue())
+            tmp_path = Path(tmp.name)
+            
+        try:
+            if tmp_path.suffix.lower() == '.md':
+                docs = self._load_markdown(tmp_path)
+                # Correct the source name from temp to original
+                for d in docs: d.metadata["source"] = file_name
+            elif tmp_path.suffix.lower() == '.pdf':
+                docs = self._load_pdf(tmp_path)
+                for d in docs: d.metadata["source"] = file_name
+            else:
+                raise ValueError(f"Unsupported file type: {tmp_path.suffix}")
+                
+            # Split into chunks
+            chunks = self.split_documents(docs)
+            return chunks
+        finally:
+            # Clean up temp file
+            if tmp_path.exists():
+                os.remove(tmp_path)
     
     def _extract_metadata(self, content: str, file_path: Path) -> Dict[str, str]:
         """

@@ -9,6 +9,7 @@ from config import get_config, Config
 from vector_store import VectorStore
 from retriever import Retriever
 from llm_handler import LLMHandler
+from document_processor import DocumentProcessor
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -50,7 +51,42 @@ class RAGPipeline:
             model=self.config.groq_model
         )
         
+        # Initialize document processor
+        self.document_processor = DocumentProcessor(
+            chunk_size=self.config.chunk_size,
+            chunk_overlap=self.config.chunk_overlap
+        )
+        
         logger.info("RAG Pipeline initialized successfully")
+    
+    def ingest_file(self, uploaded_file) -> Dict[str, Any]:
+        """
+        Process and ingest an uploaded file.
+        
+        Args:
+            uploaded_file: Streamlit UploadedFile object
+            
+        Returns:
+            Status of ingestion
+        """
+        try:
+            # Process file into chunks
+            chunks = self.document_processor.process_uploaded_file(uploaded_file)
+            
+            if not chunks:
+                return {"status": "error", "message": "No content could be extracted from file"}
+            
+            # Add to vector store
+            self.vector_store.add_documents(chunks)
+            
+            return {
+                "status": "success",
+                "message": f"Successfully ingested {len(chunks)} chunks from '{uploaded_file.name}'",
+                "chunks": len(chunks)
+            }
+        except Exception as e:
+            logger.error(f"Ingestion failed for {uploaded_file.name}: {e}")
+            return {"status": "error", "message": str(e)}
     
     def query(
         self,
