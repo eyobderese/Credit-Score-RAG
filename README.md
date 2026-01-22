@@ -1,3 +1,5 @@
+
+![UI Screenshot](ui.png)
 # Credit Scoring RAG Platform v2.0 🏦🤖
 
 A **production-grade Retrieval-Augmented Generation (RAG)** platform for answering questions about credit policies, scoring rules, and underwriting guidelines with comprehensive evaluation and experimentation capabilities.
