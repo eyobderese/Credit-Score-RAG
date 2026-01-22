@@ -87,6 +87,50 @@ class DocumentProcessor:
         logger.info(f"Loaded {len(documents)} documents (total pages/files)")
         return documents
 
+    def load_single_file(self, file_path, original_filename=None) -> List[Document]:
+        """
+        Load a single file (for API upload).
+        
+        Args:
+            file_path: Path to file (string or Path)
+            original_filename: Optional original filename for metadata
+            
+        Returns:
+            List of document objects
+        """
+        file_path = Path(file_path)
+        
+        if not file_path.exists():
+            raise FileNotFoundError(f"File not found: {file_path}")
+        
+        try:
+            if file_path.suffix.lower() == '.md':
+                docs = self._load_markdown(file_path)
+            elif file_path.suffix.lower() == '.pdf':
+                docs = self._load_pdf(file_path)
+            elif file_path.suffix.lower() == '.txt':
+                # Handle plain text
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                metadata = {
+                    "source": original_filename or file_path.name,
+                    "file_path": str(file_path),
+                    "type": "text"
+                }
+                docs = [Document(page_content=content, metadata=metadata)]
+            else:
+                raise ValueError(f"Unsupported file type: {file_path.suffix}")
+            
+            # Update source if custom filename provided
+            if original_filename:
+                for doc in docs:
+                    doc.metadata["source"] = original_filename
+            
+            return docs
+        except Exception as e:
+            logger.error(f"Error loading {file_path}: {e}")
+            raise
+
     def _load_markdown(self, file_path: Path) -> List[Document]:
         """Load a markdown file."""
         logger.info(f"Loading Markdown: {file_path.name}")

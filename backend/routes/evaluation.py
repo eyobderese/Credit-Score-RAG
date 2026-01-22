@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
 from models.evaluation import (
     TestCase, TestSetInfo, EvaluationRequest, EvaluationResult,
-    EvaluationMetrics, SingleEvaluationResult, QuestionCategory, QuestionDifficulty
+    EvaluationMetrics, SingleEvaluationResult
 )
 
 router = APIRouter()
@@ -67,8 +67,8 @@ def get_sample_test_cases() -> List[TestCase]:
             question="What is the minimum credit score for FHA loans?",
             expected_answer="580 for maximum financing, 500-579 requires 10% down payment",
             expected_sources=["credit_scoring_manual.md"],
-            category=QuestionCategory.THRESHOLD,
-            difficulty=QuestionDifficulty.EASY,
+            category="threshold",
+            difficulty="easy",
             keywords=["580", "FHA", "minimum"]
         ),
         TestCase(
@@ -76,8 +76,8 @@ def get_sample_test_cases() -> List[TestCase]:
             question="What is the maximum DTI ratio for conventional mortgages?",
             expected_answer="43% for qualified mortgages, up to 50% with compensating factors",
             expected_sources=["risk_assessment_guidelines.md"],
-            category=QuestionCategory.THRESHOLD,
-            difficulty=QuestionDifficulty.MEDIUM,
+            category="threshold",
+            difficulty="medium",
             keywords=["43%", "50%", "DTI"]
         ),
         TestCase(
@@ -85,8 +85,8 @@ def get_sample_test_cases() -> List[TestCase]:
             question="What documentation is required for self-employed borrowers?",
             expected_answer="Two years of tax returns, profit and loss statements, business bank statements",
             expected_sources=["underwriting_policies.md"],
-            category=QuestionCategory.POLICY,
-            difficulty=QuestionDifficulty.MEDIUM,
+            category="policy",
+            difficulty="medium",
             keywords=["tax returns", "self-employed", "documentation"]
         ),
         TestCase(
@@ -94,8 +94,8 @@ def get_sample_test_cases() -> List[TestCase]:
             question="What is the waiting period after bankruptcy?",
             expected_answer="Chapter 7: 4 years for conventional, 2 years for FHA. Chapter 13: 2 years from discharge",
             expected_sources=["underwriting_policies.md"],
-            category=QuestionCategory.POLICY,
-            difficulty=QuestionDifficulty.HARD,
+            category="policy",
+            difficulty="hard",
             keywords=["bankruptcy", "waiting period", "Chapter 7"]
         ),
         TestCase(
@@ -103,8 +103,8 @@ def get_sample_test_cases() -> List[TestCase]:
             question="What credit score is needed for the best interest rates?",
             expected_answer="760+ for the best rates, excellent credit tier",
             expected_sources=["credit_scoring_manual.md"],
-            category=QuestionCategory.THRESHOLD,
-            difficulty=QuestionDifficulty.EASY,
+            category="threshold",
+            difficulty="easy",
             keywords=["760", "best rates", "excellent"]
         )
     ]
@@ -179,7 +179,7 @@ async def list_test_sets():
         sample = get_sample_test_cases()
         categories = {}
         for tc in sample:
-            cat = tc.category.value
+            cat = tc.category
             categories[cat] = categories.get(cat, 0) + 1
         
         test_sets.append(TestSetInfo(

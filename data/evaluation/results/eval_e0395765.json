@@ -1,0 +1,122 @@
+{
+  "id": "e0395765",
+  "test_set_name": "default",
+  "run_at": "2026-01-22T20:01:38.761697",
+  "metrics": {
+    "answer_accuracy": 0.8,
+    "source_accuracy": 0.6,
+    "hallucination_rate": 1.0,
+    "citation_coverage": 1.0,
+    "precision_at_k": 0.6,
+    "recall_at_k": 0.6,
+    "mrr": 0.0,
+    "avg_response_time_ms": 870.8850383758545,
+    "avg_confidence": 57.4,
+    "avg_bert_score": null
+  },
+  "results": [
+    {
+      "test_case_id": "q001",
+      "question": "What is the minimum credit score required for FHA loans?",
+      "expected_answer": "580 with 3.5% down payment, or 500 with 10% down payment",
+      "actual_answer": "The minimum credit score required for FHA loans is 500 (with a 10% down payment) or 580 (with a 3.5% down payment). \n(Source: credit_scoring_manual.md - Section: 1.2 Minimum Credit Score Requirements by Product)",
+      "sources_retrieved": [
+        "credit_scoring_manual.md",
+        "credit_scoring_manual.md"
+      ],
+      "expected_sources": [
+        "credit_scoring_manual.md"
+      ],
+      "answer_correct": true,
+      "source_match": true,
+      "has_hallucination": true,
+      "confidence": 54,
+      "response_time_ms": 1352.6029586791992,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "q002",
+      "question": "What is the minimum credit score for conventional mortgage loans?",
+      "expected_answer": "620",
+      "actual_answer": "The minimum credit score for conventional mortgage loans is 620. \nThis threshold is specified for conventional mortgage loans, with no further conditions or exceptions mentioned in the provided context for this specific loan type.\n(Source: credit_scoring_manual.md - Section: 1.2 Minimum Credit Score Requirements by Product)",
+      "sources_retrieved": [
+        "credit_scoring_manual.md",
+        "credit_scoring_manual.md"
+      ],
+      "expected_sources": [
+        "credit_scoring_manual.md"
+      ],
+      "answer_correct": true,
+      "source_match": true,
+      "has_hallucination": true,
+      "confidence": 51,
+      "response_time_ms": 583.9838981628418,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "q003",
+      "question": "What is the minimum credit score for jumbo loans?",
+      "expected_answer": "700",
+      "actual_answer": "The minimum credit score for jumbo loans is 700. \nThis requirement is specified for Mortgage Loans, under the category of jumbo loans. \n(Source: credit_scoring_manual.md - Section: 1.2 Minimum Credit Score Requirements by Product)",
+      "sources_retrieved": [
+        "credit_scoring_manual.md",
+        "credit_scoring_manual.md"
+      ],
+      "expected_sources": [
+        "credit_scoring_manual.md"
+      ],
+      "answer_correct": true,
+      "source_match": true,
+      "has_hallucination": true,
+      "confidence": 52,
+      "response_time_ms": 685.5440139770508,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "q004",
+      "question": "What is the maximum DTI ratio for conventional loans?",
+      "expected_answer": "43% (up to 50% with compensating factors)",
+      "actual_answer": "The maximum DTI ratio for conventional loans is 36% for Back-End DTI, with an exception approval possible up to 43% with compensating factors. Additionally, with specific compensating factors, applicants may qualify for a DTI allowance up to 10% above the standard limits, potentially allowing for a maximum DTI ratio of 46% (36% + 10%). \n\n(Source: risk_assessment_guidelines.md - Section 1.2 Maximum DTI Ratios by Product, Section 1.3 DTI Compensating Factors)",
+      "sources_retrieved": [
+        "risk_assessment_guidelines.md"
+      ],
+      "expected_sources": [
+        "underwriting_policies.md"
+      ],
+      "answer_correct": false,
+      "source_match": false,
+      "has_hallucination": true,
+      "confidence": 54,
+      "response_time_ms": 809.0012073516846,
+      "bert_score": null,
+      "rouge_score": null
+    },
+    {
+      "test_case_id": "q005",
+      "question": "What is the front-end DTI limit for FHA loans?",
+      "expected_answer": "31%",
+      "actual_answer": "The front-end DTI limit for FHA loans is Maximum 31%. \nThis limit is specified for FHA Mortgages, with additional allowances possible under certain compensating factors, but the standard front-end DTI limit remains at 31%. \n(Source: risk_assessment_guidelines.md - Section: 1.2 Maximum DTI Ratios by Product)",
+      "sources_retrieved": [
+        "risk_assessment_guidelines.md",
+        "risk_assessment_guidelines.md"
+      ],
+      "expected_sources": [
+        "underwriting_policies.md"
+      ],
+      "answer_correct": true,
+      "source_match": false,
+      "has_hallucination": true,
+      "confidence": 76,
+      "response_time_ms": 923.2931137084961,
+      "bert_score": null,
+      "rouge_score": null
+    }
+  ],
+  "failed_cases": [
+    "q004"
+  ],
+  "error_categories": {}
+}

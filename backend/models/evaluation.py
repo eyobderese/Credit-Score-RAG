@@ -7,30 +7,14 @@ from datetime import datetime
 from enum import Enum
 
 
-class QuestionCategory(str, Enum):
-    """Categories of test questions."""
-    THRESHOLD = "threshold"
-    POLICY = "policy"
-    DEFINITION = "definition"
-    EDGE_CASE = "edge_case"
-    MULTI_HOP = "multi_hop"
-
-
-class QuestionDifficulty(str, Enum):
-    """Difficulty levels for test questions."""
-    EASY = "easy"
-    MEDIUM = "medium"
-    HARD = "hard"
-
-
 class TestCase(BaseModel):
     """A single test case for evaluation."""
     id: str = Field(..., description="Unique test case ID")
     question: str = Field(..., description="The test question")
     expected_answer: Optional[str] = Field(None, description="Expected answer (ground truth)")
     expected_sources: List[str] = Field(default_factory=list, description="Expected source documents")
-    category: QuestionCategory = Field(QuestionCategory.POLICY)
-    difficulty: QuestionDifficulty = Field(QuestionDifficulty.MEDIUM)
+    category: str = Field("policy", description="Category of the question")
+    difficulty: str = Field("medium", description="Difficulty level")
     keywords: List[str] = Field(default_factory=list, description="Keywords that should appear")
 
 
