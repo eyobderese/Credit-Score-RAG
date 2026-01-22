@@ -5,6 +5,7 @@ Main orchestration layer that combines retrieval and generation.
 """
 
 from typing import Dict, Any, Optional, List
+import time
 from config import get_config, Config
 from vector_store import VectorStore
 from retriever import Retriever
@@ -115,6 +116,7 @@ class RAGPipeline:
         logger.info(f"Processing query: {question}")
         
         # Retrieve relevant documents
+        retrieval_start = time.time()
         if use_reranking:
             retrieved_docs = self.retriever.retrieve_with_reranking(
                 query=question,
@@ -125,19 +127,23 @@ class RAGPipeline:
                 query=question,
                 top_k=top_k
             )
+        retrieval_time = time.time() - retrieval_start
         
         if not retrieved_docs:
             return {
                 "answer": "I don't have information about that in the policy documents.",
                 "sources": [],
                 "retrieved_count": 0,
-                "confidence": 0
+                "confidence": 0,
+                "retrieval_time": retrieval_time,
+                "generation_time": 0
             }
         
         # Format context for LLM
         context = self._format_context(retrieved_docs)
         
         # Generate answer
+        generation_start = time.time()
         if validate_answer:
             llm_result = self.llm_handler.generate_with_validation(
                 query=question,
@@ -148,6 +154,7 @@ class RAGPipeline:
                 query=question,
                 context=context
             )
+        generation_time = time.time() - generation_start
         
         # Prepare response
         response = {
@@ -155,7 +162,9 @@ class RAGPipeline:
             "sources": self._format_sources(retrieved_docs),
             "retrieved_count": len(retrieved_docs),
             "tokens_used": llm_result.get("tokens_used", 0),
-            "response_time": llm_result.get("response_time", 0)
+            "response_time": llm_result.get("response_time", 0),
+            "retrieval_time": retrieval_time,
+            "generation_time": generation_time
         }
         
         # Add validation info if available
