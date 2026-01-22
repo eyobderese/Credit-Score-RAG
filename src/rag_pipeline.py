@@ -212,7 +212,8 @@ class RAGPipeline:
                 "document": metadata.get('source', 'Unknown'),
                 "section": metadata.get('section', 'General'),
                 "similarity": round(doc['similarity'], 3),
-                "text_preview": doc['text'][:200] + "..." if len(doc['text']) > 200 else doc['text']
+                "text_preview": doc['text'][:200] + "..." if len(doc['text']) > 200 else doc['text'],
+                "text": doc['text']
             }
             
             # Add optional metadata fields
